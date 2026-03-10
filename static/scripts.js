@@ -98,6 +98,259 @@
   });
 })();
 
+// Logo fallback: if a Simple Icons SVG fails to load, show the text label
+(function () {
+  var items = document.querySelectorAll('.logo-item img');
+  if (!items || items.length === 0) return;
+  items.forEach(function (img) {
+    img.addEventListener('error', function () {
+      var parent = img.closest('.logo-item');
+      if (!parent) return;
+      parent.classList.add('fallback');
+      img.remove();
+    }, { once: true });
+  });
+})();
+
+// JS-driven infinite marquee for single-track rows (left and right)
+(function () {
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    return; // respect reduce motion
+  }
+  var marquees = document.querySelectorAll('.logo-marquee');
+  if (!marquees || marquees.length === 0) return;
+
+  marquees.forEach(function (marquee) {
+    var track = marquee.querySelector('.marquee-track');
+    if (!track) return;
+    var direction = marquee.classList.contains('dir-right') ? 1 : -1; // 1 => right, -1 => left
+    var speed = parseFloat(getComputedStyle(marquee).getPropertyValue('--px-speed')) || 40;
+    var gap = parseFloat(getComputedStyle(track).gap || '0') || 0;
+    var offset = 0;
+    var lastTime = null;
+    var paused = false;
+
+    function widthOf(el) {
+      var rect = el.getBoundingClientRect();
+      return rect.width;
+    }
+
+    // Initialize rightward track so we start with a negative offset containing the last item up front
+    if (direction === 1 && track.children.length > 0) {
+      var last = track.lastElementChild;
+      var w = widthOf(last) + gap;
+      track.insertBefore(last, track.firstChild);
+      offset = -w;
+      track.style.transform = 'translateX(' + offset + 'px)';
+    }
+
+    marquee.addEventListener('mouseenter', function () { paused = true; });
+    marquee.addEventListener('mouseleave', function () { paused = false; });
+
+    function tick(ts) {
+      if (paused) { requestAnimationFrame(tick); return; }
+      if (lastTime == null) lastTime = ts;
+      var dt = (ts - lastTime) / 1000; // seconds
+      lastTime = ts;
+
+      offset += direction * speed * dt;
+
+      if (direction === -1) {
+        // moving left: recycle first item when fully off to the left
+        var first = track.firstElementChild;
+        if (first) {
+          var need = widthOf(first) + gap;
+          while (-offset >= need) {
+            track.appendChild(first);
+            offset += need;
+            first = track.firstElementChild;
+            if (!first) break;
+            need = widthOf(first) + gap;
+          }
+        }
+      } else {
+        // moving right: when content drifts right, prepend last item to keep continuity
+        while (offset >= 0 && track.lastElementChild) {
+          var lastChild = track.lastElementChild;
+          var lw = widthOf(lastChild) + gap;
+          track.insertBefore(lastChild, track.firstChild);
+          offset -= lw;
+        }
+      }
+
+      track.style.transform = 'translateX(' + offset + 'px)';
+      requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  });
+})();
+
+// Video modal: open Wistia iframe on click and close on backdrop/ESC
+(function () {
+  var triggers = document.querySelectorAll('.video-card[data-video]');
+  var modal = document.getElementById('video-modal');
+  if (!triggers || triggers.length === 0 || !modal) return;
+  var iframe = document.getElementById('video-iframe');
+  var closeEls = modal.querySelectorAll('[data-close]');
+
+  function open(videoId) {
+    if (!iframe) return;
+    iframe.src = 'https://fast.wistia.net/embed/iframe/' + encodeURIComponent(videoId) + '?autoplay=1&seo=false';
+    modal.removeAttribute('hidden');
+    document.body.style.overflow = 'hidden';
+  }
+  function close() {
+    if (!iframe) return;
+    iframe.src = '';
+    modal.setAttribute('hidden', '');
+    document.body.style.overflow = '';
+  }
+
+  triggers.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var id = btn.getAttribute('data-video');
+      if (!id) return;
+      // Inline playback if requested
+      if (btn.hasAttribute('data-inline')) {
+        if (btn.classList.contains('is-playing')) return;
+        // Ensure Wistia API is loaded
+        if (!document.querySelector('script[src*="fast.wistia.com/assets/external/E-v1.js"]')) {
+          var s = document.createElement('script');
+          s.src = 'https://fast.wistia.com/assets/external/E-v1.js';
+          s.async = true;
+          document.head.appendChild(s);
+        }
+        window._wq = window._wq || [];
+        // Create container for responsive embed
+        var embed = document.createElement('div');
+        embed.className = 'wistia_embed wistia_async_' + id;
+        embed.setAttribute('style', 'height:100%;width:100%');
+        embed.setAttribute('videoFoam', 'true');
+        // Clear existing children and mount embed container
+        while (btn.firstChild) btn.removeChild(btn.firstChild);
+        btn.appendChild(embed);
+        // Click overlay to toggle play/pause
+        var overlay = document.createElement('div');
+        overlay.className = 'vc-overlay';
+        btn.appendChild(overlay);
+        btn.classList.add('is-playing');
+        var isPlaying = false;
+        window._wq.push({
+          id: id,
+          onReady: function (video) {
+            try { video.play(); isPlaying = true; } catch (e) {}
+            // Keep internal state in sync
+            if (video.bind) {
+              video.bind('play', function(){ isPlaying = true; });
+              video.bind('pause', function(){ isPlaying = false; });
+            }
+            overlay.addEventListener('click', function (e) {
+              e.preventDefault();
+              try {
+                if (isPlaying && video.pause) { video.pause(); }
+                else if (video.play) { video.play(); }
+              } catch (_) {}
+            });
+          }
+        });
+        return;
+      }
+      // Otherwise open modal
+      open(id);
+    });
+  });
+
+  closeEls.forEach(function (el) {
+    el.addEventListener('click', close);
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') close();
+  });
+})();
+
+// Testimonials arrows - horizontal scroll
+(function () {
+  var wrap = document.querySelector('.testimonials .t-wrap');
+  if (!wrap) return;
+  var track = wrap.querySelector('.t-track');
+  var prev = wrap.querySelector('.t-prev');
+  var next = wrap.querySelector('.t-next');
+  if (!track || !prev || !next) return;
+  function cardWidth() {
+    var first = track.querySelector('.t-card');
+    return first ? first.getBoundingClientRect().width + parseFloat(getComputedStyle(track).gap || '16') : 320;
+  }
+  prev.addEventListener('click', function () { track.scrollBy({ left: -cardWidth(), behavior: 'smooth' }); });
+  next.addEventListener('click', function () { track.scrollBy({ left: cardWidth(), behavior: 'smooth' }); });
+})();
+
+// Testimonials: seamless looping with head/tail clones
+(function () {
+  var wrap = document.querySelector('.testimonials .t-wrap');
+  if (!wrap) return;
+  var track = wrap.querySelector('.t-track');
+  if (!track) return;
+
+  var gapPx = function () { return parseFloat(getComputedStyle(track).gap || '16'); };
+  var step = function () {
+    var first = track.querySelector('.t-card');
+    return first ? first.getBoundingClientRect().width + gapPx() : 320 + gapPx();
+  };
+
+  var originals = Array.prototype.slice.call(track.querySelectorAll('.t-card'));
+  if (originals.length === 0) return;
+
+  function visibleCount() {
+    var s = step();
+    return Math.max(1, Math.round((track.getBoundingClientRect().width + gapPx()) / s));
+  }
+
+  var clonesHead = [];
+  var clonesTail = [];
+  var clonesN = Math.min(originals.length, visibleCount());
+
+  // Create clones
+  for (var i = 0; i < clonesN; i++) {
+    var tailClone = originals[i].cloneNode(true);
+    clonesTail.push(tailClone);
+    track.appendChild(tailClone);
+  }
+  for (var j = 0; j < clonesN; j++) {
+    var headClone = originals[originals.length - 1 - j].cloneNode(true);
+    clonesHead.push(headClone);
+    track.insertBefore(headClone, track.firstChild);
+  }
+
+  function setToStart() {
+    track.scrollLeft = clonesN * step();
+  }
+  // Initialize
+  setTimeout(setToStart, 0);
+
+  var debounce;
+  function onScrollEnd() {
+    var s = step();
+    var index = Math.round(track.scrollLeft / s);
+    var total = originals.length;
+    if (index < clonesN) {
+      // jumped into head clones → reposition to same item in originals
+      track.scrollTo({ left: (index + total) * s, behavior: 'auto' });
+    } else if (index >= clonesN + total) {
+      // jumped into tail clones → reposition to same item in originals
+      track.scrollTo({ left: (index - total) * s, behavior: 'auto' });
+    }
+  }
+  track.addEventListener('scroll', function () {
+    clearTimeout(debounce);
+    debounce = setTimeout(onScrollEnd, 120);
+  }, { passive: true });
+
+  // Keep alignment on resize
+  window.addEventListener('resize', function () {
+    setToStart();
+  });
+})();
+
 // Vertical carousel: seamless looping using head/tail clones
 (function () {
   var vertical = document.querySelector('.cs-carousel.cs-vertical');
