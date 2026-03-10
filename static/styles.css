@@ -483,7 +483,7 @@ img {
 /* Tagline */
 .tagline {
   padding: 3rem 0;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 0;
   background: var(--background);
   text-align: center;
 }
@@ -791,6 +791,195 @@ img {
 }
 
 /* Services grid */
+
+/* Metrics (homepage counters) */
+.metrics {
+  padding-bottom: 2.5rem ;
+  background: var(--background);
+}
+.metrics-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  align-items: center;
+  justify-items: center;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .metrics-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 3rem;
+  }
+}
+.metric-value {
+  font-family: var(--font-display);
+  font-weight: 900;
+  color: var(--primary);
+  line-height: 1;
+  font-size: clamp(2.75rem, 7vw, 4.5rem);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.35rem;
+}
+.metric-label {
+  color: var(--foreground);
+  opacity: 0.75;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+/* Case Studies (horizontal snap carousel) */
+.case-studies {
+  padding: 3.5rem 0 1rem;
+  background: transparent;
+}
+.cs-wrap {
+  position: relative;
+}
+.cs-carousel {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 88%;
+  gap: 1rem;
+  overflow-x: auto;
+  padding: 0.25rem 0.25rem 0.75rem;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+@media (min-width: 1024px) {
+  .cs-carousel {
+    grid-auto-columns: 60%;
+    gap: 1.25rem;
+  }
+}
+.cs-slide {
+  position: relative;
+  height: 420px;
+  border-radius: 16px;
+  overflow: hidden;
+  color: white;
+  text-decoration: none;
+  scroll-snap-align: center;
+  isolation: isolate;
+  box-shadow: none; /* remove grayish edge */
+  border: 0;
+  background: transparent;
+}
+.cs-slide::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--img);
+  background-size: cover;
+  background-position: center;
+  transform: scale(1);
+  transition: transform 0.6s ease;
+  z-index: -2;
+}
+.cs-slide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(2,6,23,0.9), rgba(2,6,23,0.45), transparent 55%);
+  z-index: -1;
+  transition: opacity 0.3s ease;
+}
+.cs-slide:hover::before {
+  transform: scale(1.05);
+}
+.cs-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1.25rem 1.25rem 1.5rem;
+}
+.cs-kicker {
+  color: var(--primary);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  margin-bottom: 0.35rem;
+}
+.cs-title {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  margin: 0 0 0.25rem;
+}
+.cs-sub {
+  color: rgba(255,255,255,0.9);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  max-width: 48ch;
+}
+.cs-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  border: 0;
+  display: grid;
+  place-items: center;
+  background: rgba(2, 6, 23, 0.55);
+  color: white;
+  font-weight: 900;
+  cursor: pointer;
+  z-index: 2;
+  box-shadow: 0 8px 26px rgba(2, 6, 23, 0.28);
+}
+.cs-prev { left: -6px; }
+.cs-next { right: -6px; }
+.cs-nav:hover {
+  background: rgba(2, 6, 23, 0.8);
+}
+
+/* Vertical variant */
+.case-studies .cs-carousel.cs-vertical {
+  display: flex !important;
+  flex-direction: column;
+  gap: 0.75rem;
+  height: 420px;
+  max-height: 420px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0.25rem;
+  scroll-snap-type: y mandatory;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge legacy */
+  background: transparent;
+}
+@media (min-width: 768px) {
+  .case-studies .cs-carousel.cs-vertical {
+    height: 460px;
+    max-height: 460px;
+    gap: 1rem;
+  }
+}
+.case-studies .cs-carousel.cs-vertical::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+.case-studies .cs-carousel:focus { outline: none; }
+.cs-vertical .cs-slide {
+  height: 100%;
+  min-height: 100%;
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+.cs-vertical::-webkit-scrollbar {
+  width: 10px;
+}
+.cs-vertical::-webkit-scrollbar-thumb {
+  background: rgba(2,6,23,0.25);
+  border-radius: 10px;
+}
+.cs-wrap .cs-nav { display: none; }
+
 .services-grid {
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));
