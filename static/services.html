@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/webp" href="assets/w3mg-logo.webp" />
+    <link rel="shortcut icon" type="image/webp" href="assets/w3mg-logo.webp" />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Services — W3MG</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container nav">
+        <a class="logo" href="index.html"><img src="assets/w3mg-logo.webp" alt="W3MG" class="logo-img"></a>
+        <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <span class="menu-bar"></span>
+          <span class="menu-bar"></span>
+          <span class="menu-bar"></span>
+        </button>
+        <nav class="nav-links">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="services.html" class="nav-link active">Services</a>
+          <a href="portfolio.html" class="nav-link">Portfolio</a>
+          <a href="about.html" class="nav-link">About Us</a>
+          <a href="contact.html" class="btn btn-primary btn-small">Let's Talk</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- Header -->
+      <section class="pt-32 pb-20" style="background:#0b1220;color:white;position:relative;overflow:hidden;">
+        <div style="position:absolute;inset:0;opacity:0.1;background:url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop') center/cover;"></div>
+        <div style="position:absolute;inset:0;background:linear-gradient(to bottom, transparent, #0b1220);"></div>
+        <div class="container" style="position:relative;z-index:1;text-align:center;">
+          <div class="reveal">
+            <h1 class="section-title" style="color:white;font-size:clamp(2.5rem,6vw,4.5rem);">
+              Creative Solutions for <br />
+              <span class="grad">Building Your Digital Brand</span>
+            </h1>
+            <p class="lead" style="max-width:42rem;margin:0 auto;">
+              We provide a comprehensive suite of digital services designed to accelerate your growth and dominate your industry.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services Grid -->
+      <section class="section">
+        <div class="container">
+          <div class="services-grid">
+            <!-- Cards -->
+            <div class="service-card reveal">
+              <div class="service-icon" style="background:linear-gradient(135deg,#3b82f6,#22d3ee)">WP</div>
+              <h3>Custom WordPress</h3>
+              <p>Tailored themes and plugins built for speed, security, and easy content management.</p>
+            </div>
+            <div class="service-card reveal">
+              <div class="service-icon" style="background:linear-gradient(135deg,#ef4444,#fb923c)">LV</div>
+              <h3>Laravel Web Apps</h3>
+              <p>Robust, scalable backend architectures for complex web applications and portals.</p>
+            </div>
+            <div class="service-card reveal">
+              <div class="service-icon" style="background:linear-gradient(135deg,#22c55e,#10b981)">FS</div>
+              <h3>Full Stack Development</h3>
+              <p>End-to-end MERN/Next.js solutions with dynamic interfaces and powerful APIs.</p>
+            </div>
+            <div class="service-card reveal">
+              <div class="service-icon" style="background:linear-gradient(135deg,#a855f7,#e879f9)">BS</div>
+              <h3>Brand Strategy</h3>
+              <p>Strategic positioning and digital branding to make you stand out in the market.</p>
+            </div>
+            <div class="service-card reveal">
+              <div class="service-icon" style="background:linear-gradient(135deg,#eab308,#f59e0b)">SEO</div>
+              <h3>SEO Optimization</h3>
+              <p>Technical SEO and performance tuning to improve visibility and organic traffic.</p>
+            </div>
+            <div class="service-card reveal">
+              <div class="service-icon" style="background:linear-gradient(135deg,#ec4899,#f43f5e)">RD</div>
+              <h3>Responsive Design</h3>
+              <p>Pixel-perfect, mobile-first interfaces that look beautiful on every device.</p>
+            </div>
+            <div class="service-card reveal">
+              <div class="service-icon" style="background:linear-gradient(135deg,#6366f1,#8b5cf6)">EC</div>
+              <h3>E-Commerce Setup</h3>
+              <p>High-converting online stores using WooCommerce, Shopify, or custom solutions.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Bottom CTA -->
+      <section class="section" style="background: hsl(210 40% 96.1% / 0.5); text-align:center;">
+        <div class="container reveal">
+          <h2 class="section-title">Not sure what you need?</h2>
+          <p class="lead" style="max-width:42rem;margin:0 auto 1rem;">
+            Book a free consultation with our experts. We'll analyze your requirements and propose the perfect tech stack for your goals.
+          </p>
+          <a href="contact.html" class="btn btn-primary">Get Free Consultation</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo logo-light"><img src="assets/w3mg-logo.webp" alt="W3MG" class="logo-img"></a>
+          <p class="footer-text">
+            We build scalable digital solutions that drive real results. From concept to code, we're your partner in innovation.
+          </p>
+          <div class="socials">
+            <a href="#" aria-label="Twitter">𝕏</a>
+            <a href="#" aria-label="LinkedIn">in</a>
+            <a href="#" aria-label="GitHub">GH</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="about.html">About Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-title">Services</h4>
+          <ul class="footer-list">
+            <li>Custom WordPress</li>
+            <li>Laravel Web Apps</li>
+            <li>Full Stack React</li>
+            <li>E-Commerce Setup</li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-title">Contact Us</h4>
+          <ul class="footer-list">
+            <li>123 Innovation Drive, Tech City, TC 10010</li>
+            <li>+1 (555) 123-4567</li>
+            <li>hello@w3mg.com</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container footer-bottom-inner">
+          <p>© <span id="year"></span> W3MG Agency. All rights reserved.</p>
+          <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./scripts.js"></script>
+  </body>
+  </html>
+
