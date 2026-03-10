@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | W3MG</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">W3MG</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html" class="active">Portfolio</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container py-20">
+        <section class="portfolio-header">
+            <h1>Crafting Websites That Captivate and Convert</h1>
+            <p>Explore standout projects that demonstrate our ability to blend innovation and technical skill.</p>
+        </section>
+
+        <section class="portfolio-grid">
+            <div class="portfolio-item"><h3>Responsive E-commerce Design</h3><p>Modern Shopify Build</p></div>
+            <div class="portfolio-item"><h3>Custom WordPress Development</h3><p>Scalable Blog Platform</p></div>
+            <div class="portfolio-item"><h3>Laravel Web App Solutions</h3><p>Dynamic CRM Application</p></div>
+            <div class="portfolio-item"><h3>Full-Stack Branding Suite</h3><p>End-to-End Web Presence</p></div>
+            <div class="portfolio-item"><h3>Tailored Membership Portals</h3><p>Secure User Platforms</p></div>
+            <div class="portfolio-item"><h3>Interactive UI/UX Design</h3><p>Intuitive Front-End Interface</p></div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 W3MG Software and Internet Services Pvt. Ltd. All rights reserved.</p>
+        </div>
+    </footer>
+    <style>
+        .py-20 { padding: 5rem 0; }
+        .portfolio-header { text-align: center; margin-bottom: 4rem; }
+        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .portfolio-item { height: 250px; background: var(--light-gray); display: flex; flex-direction: column; justify-content: flex-end; padding: 2rem; border-radius: 12px; border: 1px solid #eee; transition: all 0.3s; }
+        .portfolio-item:hover { border-color: var(--primary); transform: translateY(-5px); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
+        .portfolio-item h3 { color: var(--primary); margin-bottom: 0.5rem; }
+    </style>
+</body>
+</html>
