@@ -86,16 +86,54 @@
     return vertical.getBoundingClientRect().height + parseFloat(getComputedStyle(vertical).rowGap || getComputedStyle(vertical).gap || 12);
   }
 
+  function canScroll(dir) {
+    var max = Math.max(0, vertical.scrollHeight - vertical.clientHeight);
+    var top = vertical.scrollTop;
+    if (dir > 0) { // down
+      return top < max - 1; // allow tiny epsilon
+    }
+    if (dir < 0) { // up
+      return top > 1;
+    }
+    return false;
+  }
+
   function scrollByY(dir) {
     vertical.scrollBy({ top: dir * getStep(), behavior: 'smooth' });
   }
 
+  function scrollPage(dir, isPageKey) {
+    var amount = isPageKey ? Math.max(240, Math.floor(window.innerHeight * 0.9)) : 80;
+    window.scrollBy({ top: dir * amount, behavior: 'smooth' });
+  }
+
   vertical.addEventListener('keydown', function (e) {
-    if (e.key === 'ArrowDown' || e.key === 'PageDown') { e.preventDefault(); scrollByY(1); }
-    if (e.key === 'ArrowUp' || e.key === 'PageUp') { e.preventDefault(); scrollByY(-1); }
+    if (e.key === 'ArrowDown' || e.key === 'PageDown') {
+      if (canScroll(1)) { e.preventDefault(); scrollByY(1); }
+      else { e.preventDefault(); scrollPage(1, e.key === 'PageDown'); }
+      return;
+    }
+    if (e.key === 'ArrowUp' || e.key === 'PageUp') {
+      if (canScroll(-1)) { e.preventDefault(); scrollByY(-1); }
+      else { e.preventDefault(); scrollPage(-1, e.key === 'PageUp'); }
+      return;
+    }
     if (e.key === 'Home') { e.preventDefault(); vertical.scrollTo({ top: 0, behavior: 'smooth' }); }
     if (e.key === 'End') { e.preventDefault(); vertical.scrollTo({ top: vertical.scrollHeight, behavior: 'smooth' }); }
   });
+
+  // When at top/bottom of inner scroller, forward wheel to page
+  vertical.addEventListener('wheel', function (e) {
+    var dir = e.deltaY > 0 ? 1 : -1;
+    if (canScroll(dir)) return; // let inner consume
+    e.preventDefault();
+    // Use raw delta for natural feel; fallback to viewport step if delta is tiny
+    var dy = e.deltaY;
+    if (Math.abs(dy) < 1) {
+      dy = dir * Math.max(120, Math.floor(window.innerHeight * 0.6));
+    }
+    window.scrollBy({ top: dy, behavior: 'auto' });
+  }, { passive: false });
 })();
 
 // Logo fallback: if a Simple Icons SVG fails to load, show the text label
@@ -351,56 +389,7 @@
   });
 })();
 
-// Vertical carousel: seamless looping using head/tail clones
-(function () {
-  var vertical = document.querySelector('.cs-carousel.cs-vertical');
-  if (!vertical) return;
-  var slides = Array.prototype.slice.call(vertical.querySelectorAll('.cs-slide'));
-  if (slides.length < 2) return; // no need to loop if single slide
-
-  // Clone last → head and first → tail
-  var firstClone = slides[0].cloneNode(true);
-  var lastClone = slides[slides.length - 1].cloneNode(true);
-  vertical.insertBefore(lastClone, vertical.firstChild);
-  vertical.appendChild(firstClone);
-
-  var slideHeight = 0;
-  function measure() {
-    // Each slide fills the container, so height == container height
-    slideHeight = vertical.getBoundingClientRect().height;
-  }
-  measure();
-  window.addEventListener('resize', function () {
-    var prevIndex = Math.round(vertical.scrollTop / (slideHeight || 1));
-    measure();
-    // Re-align to nearest snap after resize
-    vertical.scrollTo({ top: prevIndex * slideHeight, behavior: 'auto' });
-  });
-
-  // Start at first real slide (index 1 due to prepended clone)
-  requestAnimationFrame(function () {
-    vertical.scrollTop = slideHeight;
-  });
-
-  var debounceTimer = null;
-  function onScrollEnd() {
-    var total = slides.length; // originals count
-    var index = Math.round(vertical.scrollTop / (slideHeight || 1));
-    if (index <= 0) {
-      // Jump to last real slide (index = total)
-      vertical.scrollTo({ top: total * slideHeight, behavior: 'auto' });
-    } else if (index >= total + 1) {
-      // Jump to first real slide (index = 1)
-      vertical.scrollTo({ top: slideHeight, behavior: 'auto' });
-    }
-  }
-
-  vertical.addEventListener('scroll', function () {
-    // Debounce to approximate scrollend and maintain snap behavior
-    if (debounceTimer) clearTimeout(debounceTimer);
-    debounceTimer = setTimeout(onScrollEnd, 120);
-  }, { passive: true });
-})();
+// Note: Vertical carousel looping removed to keep scroll limited to original slides
 
 // Count-up metrics (homepage)
 (function () {
@@ -443,4 +432,49 @@
   }, { rootMargin: '0px 0px -10% 0px', threshold: 0.2 });
 
   counters.forEach(function (el) { io.observe(el); });
+})();
+
+// Availability text rotator (fade every 3.5s)
+(function () {
+  var container = document.querySelector('.availability');
+  if (!container) return;
+  var textEl = container.querySelector('.availability-text');
+  if (!textEl) return;
+
+  var phrases = [
+    'Available for new projects',
+    'Hire Dedicated Developers',
+    'CMS Development',
+    'Full Stack Development',
+    'Artificial Intelligence & ML'
+  ];
+
+  var index = 0;
+  var duration = 3500; // ms between changes
+  var fadeMs = 380; // should match CSS transition ~0.4s
+
+  // Ensure first phrase is set
+  textEl.textContent = phrases[index];
+
+  function advance() {
+    var nextIndex = (index + 1) % phrases.length;
+    textEl.classList.add('fade-out');
+    setTimeout(function () {
+      textEl.textContent = phrases[nextIndex];
+      textEl.classList.remove('fade-out');
+      index = nextIndex;
+    }, fadeMs);
+  }
+
+  // Respect reduced motion: still change text, but no class toggling delays
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion) {
+    setInterval(function () {
+      index = (index + 1) % phrases.length;
+      textEl.textContent = phrases[index];
+    }, duration);
+    return;
+  }
+
+  setInterval(advance, duration);
 })();
