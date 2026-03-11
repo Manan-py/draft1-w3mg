@@ -134,6 +134,37 @@
     }
     window.scrollBy({ top: dy, behavior: 'auto' });
   }, { passive: false });
+
+  // Idle-aware auto-scroll: when visible and idle for 5s, advance one slide
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduceMotion) {
+    var lastInteraction = Date.now();
+    function markInteraction() { lastInteraction = Date.now(); }
+    ['scroll', 'wheel', 'keydown', 'touchstart', 'pointerdown'].forEach(function (ev) {
+      vertical.addEventListener(ev, markInteraction, { passive: true });
+    });
+
+    var inView = false;
+    try {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          inView = !!entry.isIntersecting && entry.intersectionRatio >= 0.5;
+        });
+      }, { threshold: [0.5] });
+      io.observe(vertical);
+    } catch (_) {
+      inView = true; // fallback if IO unsupported
+    }
+
+    setInterval(function () {
+      if (!inView) return;
+      if (Date.now() - lastInteraction < 5000) return;
+      if (canScroll(1)) {
+        scrollByY(1);
+        lastInteraction = Date.now();
+      }
+    }, 500);
+  }
 })();
 
 // Logo fallback: if a Simple Icons SVG fails to load, show the text label
