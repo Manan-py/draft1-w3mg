@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/webp" href="assets/w3mg-logo.webp" />
+    <link rel="shortcut icon" type="image/webp" href="assets/w3mg-logo.webp" />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css" />
+    <title>MERN Stack Development — W3MG</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container nav">
+        <a class="logo" href="index.html"><img src="assets/w3mg-logo.webp" alt="W3MG" class="logo-img"></a>
+        <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <span class="menu-bar"></span>
+          <span class="menu-bar"></span>
+          <span class="menu-bar"></span>
+        </button>
+        <nav class="nav-links">
+          <a href="index.html" class="nav-link">Home</a>
+          <div class="nav-dropdown">
+            <a href="services.html" class="nav-link active">Services <span class="dropdown-arrow">▾</span></a>
+            <div class="dropdown-menu">
+              <a href="wordpress-development.html" class="dropdown-item"><span class="dropdown-item-icon" style="background:hsl(201 79% 46%/0.1);color:#0073aa;">WP</span> WordPress Development</a>
+              <a href="laravel-development.html" class="dropdown-item"><span class="dropdown-item-icon" style="background:hsl(0 84% 60%/0.1);color:#ef4444;">LV</span> Laravel Development</a>
+              <a href="mern-stack.html" class="dropdown-item"><span class="dropdown-item-icon" style="background:hsl(174 72% 56%/0.1);color:#14b8a6;">JS</span> MERN Stack</a>
+              <a href="security-devops.html" class="dropdown-item"><span class="dropdown-item-icon" style="background:hsl(263 70% 50%/0.1);color:#7c3aed;">🛡</span> Security &amp; DevOps</a>
+              <a href="headless-ecommerce.html" class="dropdown-item"><span class="dropdown-item-icon" style="background:hsl(160 84% 39%/0.1);color:#059669;">🛒</span> Headless E-commerce</a>
+              <a href="fullstack-development.html" class="dropdown-item"><span class="dropdown-item-icon" style="background:hsl(221 83% 53%/0.1);color:#2563eb;">FS</span> Full-Stack Development</a>
+              <a href="ai-models-training.html" class="dropdown-item"><span class="dropdown-item-icon" style="background:hsl(271 81% 56%/0.1);color:#9333ea;">🧠</span> AI Models Training</a>
+              <a href="ai-chatbots.html" class="dropdown-item"><span class="dropdown-item-icon" style="background:hsl(192 91% 36%/0.1);color:#0891b2;">💬</span> AI Chatbots</a>
+            </div>
+          </div>
+          <a href="portfolio.html" class="nav-link">Portfolio</a>
+          <a href="about.html" class="nav-link">About Us</a>
+          <a href="contact.html" class="btn btn-primary btn-small">Let's Talk</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero -->
+      <section class="tech-hero tech-hero--mern">
+        <div class="tech-particles">
+          <span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span>
+        </div>
+        <div class="container">
+          <div class="tech-hero-inner">
+            <div class="tech-hero-content">
+              <div class="tech-badge reveal">JavaScript Everywhere</div>
+              <h1 class="tech-hero-title reveal">
+                Modern Apps with<br />
+                <span class="highlight" style="background: linear-gradient(90deg, #2dd4bf, #22d3ee); -webkit-background-clip: text; background-clip: text;">MERN Stack</span>
+              </h1>
+              <p class="tech-hero-sub reveal">
+                MongoDB, Express.js, React, and Node.js — a unified JavaScript ecosystem for building lightning-fast, real-time web applications from frontend to backend.
+              </p>
+              <div class="tech-hero-ctas reveal">
+                <a href="contact.html" class="btn btn-ghost-onblue">Start Your Project</a>
+                <a href="portfolio.html" class="btn btn-outline-onblue">View Our Work</a>
+              </div>
+            </div>
+            <div class="tech-hero-visual">
+              <div class="tech-float-card reveal">
+                <div class="tech-float-icon" style="background: linear-gradient(135deg, #0d9488, #06b6d4);">JS</div>
+                <div class="tech-float-title">Full JavaScript Stack</div>
+                <div class="tech-float-sub">One language across the entire stack — faster development, shared code, and seamless integration.</div>
+                <div class="tech-float-bars">
+                  <div class="tech-bar"><span style="width: 96%; background: linear-gradient(90deg, #0d9488, #06b6d4);"></span></div>
+                  <div class="tech-bar"><span style="width: 91%; background: linear-gradient(90deg, #0d9488, #06b6d4);"></span></div>
+                  <div class="tech-bar"><span style="width: 89%; background: linear-gradient(90deg, #0d9488, #06b6d4);"></span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features -->
+      <section class="tech-features">
+        <div class="container">
+          <div class="center reveal">
+            <h2 class="section-title">What We <span class="grad-teal">Build</span></h2>
+            <p class="lead" style="max-width: 42rem; margin-inline: auto;">
+              Dynamic, real-time applications that leverage the full power of JavaScript on both client and server.
+            </p>
+          </div>
+          <div class="tech-features-grid stagger-in" style="margin-top: 2.5rem;">
+            <div class="tech-feature-card reveal">
+              <div class="tech-feature-icon" style="background: hsl(174 72% 56% / 0.1); color: #14b8a6;">⚛️</div>
+              <h3>React & Next.js Apps</h3>
+              <p>Server-rendered, statically generated, or SPA — we pick the right rendering strategy for your use case with optimal performance.</p>
+            </div>
+            <div class="tech-feature-card reveal">
+              <div class="tech-feature-icon" style="background: hsl(174 72% 56% / 0.1); color: #14b8a6;">🔌</div>
+              <h3>Node.js APIs</h3>
+              <p>High-throughput Express or Fastify APIs with middleware patterns, JWT auth, and comprehensive OpenAPI documentation.</p>
+            </div>
+            <div class="tech-feature-card reveal">
+              <div class="tech-feature-icon" style="background: hsl(174 72% 56% / 0.1); color: #14b8a6;">🍃</div>
+              <h3>MongoDB & Data Layer</h3>
+              <p>Flexible document databases with Mongoose ODM, aggregation pipelines, and Atlas cloud deployment for scalable data storage.</p>
+            </div>
+            <div class="tech-feature-card reveal">
+              <div class="tech-feature-icon" style="background: hsl(174 72% 56% / 0.1); color: #14b8a6;">⚡</div>
+              <h3>Real-time Features</h3>
+              <p>Socket.IO-powered live messaging, notifications, collaborative editing, and live dashboards with instant updates.</p>
+            </div>
+            <div class="tech-feature-card reveal">
+              <div class="tech-feature-icon" style="background: hsl(174 72% 56% / 0.1); color: #14b8a6;">📱</div>
+              <h3>Progressive Web Apps</h3>
+              <p>Offline-capable, installable PWAs with service workers, push notifications, and native-like performance on any device.</p>
+            </div>
+            <div class="tech-feature-card reveal">
+              <div class="tech-feature-icon" style="background: hsl(174 72% 56% / 0.1); color: #14b8a6;">🔗</div>
+              <h3>Third-Party Integrations</h3>
+              <p>Stripe payments, OAuth providers, CRM systems, analytics platforms — seamlessly connected to your application.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tech Stack -->
+      <section class="tech-stack">
+        <div class="container center">
+          <h2 class="section-title reveal">Our MERN <span class="grad-teal">Toolkit</span></h2>
+          <p class="lead reveal" style="max-width: 42rem; margin-inline: auto;">
+            The modern JavaScript ecosystem at its finest.
+          </p>
+          <div class="tech-stack-grid reveal">
+            <div class="tech-stack-item"><img src="https://cdn.jsdelivr.net/npm/simple-icons/icons/mongodb.svg" alt="MongoDB" loading="lazy"> MongoDB</div>
+            <div class="tech-stack-item"><img src="https://cdn.jsdelivr.net/npm/simple-icons/icons/express.svg" alt="Express" loading="lazy"> Express.js</div>
+            <div class="tech-stack-item"><img src="https://cdn.jsdelivr.net/npm/simple-icons/icons/react.svg" alt="React" loading="lazy"> React 19</div>
+            <div class="tech-stack-item"><img src="https://cdn.jsdelivr.net/npm/simple-icons/icons/nodedotjs.svg" alt="Node.js" loading="lazy"> Node.js</div>
+            <div class="tech-stack-item"><img src="https://cdn.jsdelivr.net/npm/simple-icons/icons/nextdotjs.svg" alt="Next.js" loading="lazy"> Next.js</div>
+            <div class="tech-stack-item"><img src="https://cdn.jsdelivr.net/npm/simple-icons/icons/typescript.svg" alt="TypeScript" loading="lazy"> TypeScript</div>
+            <div class="tech-stack-item"><img src="https://cdn.jsdelivr.net/npm/simple-icons/icons/redux.svg" alt="Redux" loading="lazy"> Redux / Zustand</div>
+            <div class="tech-stack-item"><img src="https://cdn.jsdelivr.net/npm/simple-icons/icons/socketdotio.svg" alt="Socket.IO" loading="lazy"> Socket.IO</div>
+            <div class="tech-stack-item"><img src="https://cdn.jsdelivr.net/npm/simple-icons/icons/jest.svg" alt="Jest" loading="lazy"> Jest / Vitest</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Process -->
+      <section class="tech-process">
+        <div class="container">
+          <div class="center reveal">
+            <h2 class="section-title">Our MERN <span class="grad-teal">Process</span></h2>
+            <p class="lead" style="max-width: 42rem; margin-inline: auto;">
+              Agile sprints, continuous delivery, and transparent communication.
+            </p>
+          </div>
+          <div class="tech-process-grid stagger-in">
+            <div class="tech-step reveal">
+              <div class="tech-step-num" style="background: linear-gradient(135deg, #0d9488, #06b6d4);">1</div>
+              <h3>Requirements & API Design</h3>
+              <p>Data models, API contracts, and component architecture defined with your input from day one.</p>
+              <div class="tech-step-connector"></div>
+            </div>
+            <div class="tech-step reveal">
+              <div class="tech-step-num" style="background: linear-gradient(135deg, #0d9488, #06b6d4);">2</div>
+              <h3>Parallel Development</h3>
+              <p>Frontend and backend teams work simultaneously with shared TypeScript types and mock APIs.</p>
+              <div class="tech-step-connector"></div>
+            </div>
+            <div class="tech-step reveal">
+              <div class="tech-step-num" style="background: linear-gradient(135deg, #0d9488, #06b6d4);">3</div>
+              <h3>Integration & QA</h3>
+              <p>End-to-end testing with Cypress, API testing, performance benchmarking, and security audits.</p>
+              <div class="tech-step-connector"></div>
+            </div>
+            <div class="tech-step reveal">
+              <div class="tech-step-num" style="background: linear-gradient(135deg, #0d9488, #06b6d4);">4</div>
+              <h3>Deploy & Iterate</h3>
+              <p>Containerized deployments on AWS/Vercel with monitoring, error tracking, and continuous optimization.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Why Choose -->
+      <section class="tech-why">
+        <div class="container">
+          <div class="center reveal">
+            <h2 class="section-title">Why <span class="grad-teal">MERN</span> with W3MG?</h2>
+          </div>
+          <div class="tech-why-grid">
+            <div class="tech-why-item reveal">
+              <div class="tech-why-icon" style="background: hsl(174 72% 56% / 0.1); color: #14b8a6;">🚀</div>
+              <div>
+                <h3>Unified Language Stack</h3>
+                <p>JavaScript everywhere means faster development, easier debugging, and shared code between frontend and backend.</p>
+              </div>
+            </div>
+            <div class="tech-why-item reveal">
+              <div class="tech-why-icon" style="background: hsl(174 72% 56% / 0.1); color: #14b8a6;">⚡</div>
+              <div>
+                <h3>Blazing Performance</h3>
+                <p>Non-blocking I/O on Node.js, virtual DOM diffing on React — optimized for speed at every layer.</p>
+              </div>
+            </div>
+            <div class="tech-why-item reveal">
+              <div class="tech-why-icon" style="background: hsl(174 72% 56% / 0.1); color: #14b8a6;">📦</div>
+              <div>
+                <h3>Rich Ecosystem</h3>
+                <p>Access to 2M+ npm packages means proven solutions for almost any challenge you can imagine.</p>
+              </div>
+            </div>
+            <div class="tech-why-item reveal">
+              <div class="tech-why-icon" style="background: hsl(174 72% 56% / 0.1); color: #14b8a6;">🔄</div>
+              <div>
+                <h3>Real-time by Default</h3>
+                <p>WebSockets and event-driven architecture make real-time features natural, not an afterthought.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="tech-cta tech-hero--mern">
+        <div class="container">
+          <h2 class="tech-cta-title reveal">Build Your Next-Gen Application</h2>
+          <p class="tech-cta-sub reveal">From MVP to enterprise — let's build something incredible with the MERN stack.</p>
+          <a href="contact.html" class="btn btn-onwhite reveal">Let's Talk</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo logo-light"><img src="assets/w3mg-logo.webp" alt="W3MG" class="logo-img"></a>
+          <p class="footer-text">We build scalable digital solutions that drive real results. From concept to code, we're your partner in innovation.</p>
+          <div class="socials">
+            <a href="#" aria-label="Twitter">𝕏</a>
+            <a href="#" aria-label="LinkedIn">in</a>
+            <a href="#" aria-label="GitHub">GH</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="about.html">About Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-title">Technologies</h4>
+          <ul class="footer-list">
+            <li><a href="wordpress-development.html">WordPress</a></li>
+            <li><a href="laravel-development.html">Laravel</a></li>
+            <li><a href="mern-stack.html">MERN Stack</a></li>
+            <li><a href="fullstack-development.html">Full-Stack</a></li>
+            <li><a href="ai-chatbots.html">AI Chatbots</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-title">Contact Us</h4>
+          <ul class="footer-list">
+            <li>123 Innovation Drive, Tech City, TC 10010</li>
+            <li>+1 (555) 123-4567</li>
+            <li>hello@w3mg.com</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container footer-bottom-inner">
+          <p>&copy; <span id="year"></span> W3MG Agency. All rights reserved.</p>
+          <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./scripts.js"></script>
+  </body>
+</html>

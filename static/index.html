@@ -23,7 +23,19 @@
         </button>
         <nav class="nav-links">
           <a href="index.html" class="nav-link active">Home</a>
-          <a href="services.html" class="nav-link">Services</a>
+          <div class="nav-dropdown">
+            <a href="services.html" class="nav-link">Services <span class="dropdown-arrow">▾</span></a>
+            <div class="dropdown-menu">
+              <a href="wordpress-development.html" class="dropdown-item"><span class="dropdown-item-icon" style="background:hsl(201 79% 46%/0.1);color:#0073aa;">WP</span> WordPress Development</a>
+              <a href="laravel-development.html" class="dropdown-item"><span class="dropdown-item-icon" style="background:hsl(0 84% 60%/0.1);color:#ef4444;">LV</span> Laravel Development</a>
+              <a href="mern-stack.html" class="dropdown-item"><span class="dropdown-item-icon" style="background:hsl(174 72% 56%/0.1);color:#14b8a6;">JS</span> MERN Stack</a>
+              <a href="security-devops.html" class="dropdown-item"><span class="dropdown-item-icon" style="background:hsl(263 70% 50%/0.1);color:#7c3aed;">🛡</span> Security &amp; DevOps</a>
+              <a href="headless-ecommerce.html" class="dropdown-item"><span class="dropdown-item-icon" style="background:hsl(160 84% 39%/0.1);color:#059669;">🛒</span> Headless E-commerce</a>
+              <a href="fullstack-development.html" class="dropdown-item"><span class="dropdown-item-icon" style="background:hsl(221 83% 53%/0.1);color:#2563eb;">FS</span> Full-Stack Development</a>
+              <a href="ai-models-training.html" class="dropdown-item"><span class="dropdown-item-icon" style="background:hsl(271 81% 56%/0.1);color:#9333ea;">🧠</span> AI Models Training</a>
+              <a href="ai-chatbots.html" class="dropdown-item"><span class="dropdown-item-icon" style="background:hsl(192 91% 36%/0.1);color:#0891b2;">💬</span> AI Chatbots</a>
+            </div>
+          </div>
           <a href="portfolio.html" class="nav-link">Portfolio</a>
           <a href="about.html" class="nav-link">About Us</a>
           <a href="contact.html" class="btn btn-primary btn-small">Let's Talk</a>
@@ -210,28 +222,28 @@
      <section class="services-showcase">
       <div class="container">
         <div class="svc-grid">
-          <a href="services.html" class="svc-card" style="--img: url('assets/services-1.jpg');">
+          <a href="wordpress-development.html" class="svc-card" style="--img: url('assets/services-1.jpg');">
             <div class="svc-inner">
-              <h3 class="svc-title">WordPress Plugin Development</h3>
-              <p class="svc-desc">Custom, secure, and performant plugins tailored to your product needs.</p>
+              <h3 class="svc-title">WordPress Development</h3>
+              <p class="svc-desc">Custom themes, plugins, and enterprise CMS solutions built for performance.</p>
             </div>
           </a>
-          <a href="services.html" class="svc-card" style="--img: url('assets/services-2.jpg');">
+          <a href="laravel-development.html" class="svc-card" style="--img: url('assets/services-2.jpg');">
             <div class="svc-inner">
-              <h3 class="svc-title">WordPress Theme Development</h3>
-              <p class="svc-desc">Pixel-perfect themes built for speed, accessibility, and easy editing.</p>
+              <h3 class="svc-title">Laravel Development</h3>
+              <p class="svc-desc">Robust SaaS platforms, APIs, and web applications with elegant PHP.</p>
             </div>
           </a>
-          <a href="services.html" class="svc-card" style="--img: url('assets/services-3.jpg');">
+          <a href="mern-stack.html" class="svc-card" style="--img: url('assets/services-3.jpg');">
             <div class="svc-inner">
-              <h3 class="svc-title">WordPress Customization</h3>
-              <p class="svc-desc">Extend or refactor your site the right way—clean, upgrade-safe code.</p>
+              <h3 class="svc-title">MERN Stack</h3>
+              <p class="svc-desc">Full JavaScript applications with React, Node.js, and real-time features.</p>
             </div>
           </a>
-          <a href="services.html" class="svc-card" style="--img: url('assets/services-4.jpg');">
+          <a href="ai-chatbots.html" class="svc-card" style="--img: url('assets/services-4.jpg');">
             <div class="svc-inner">
-              <h3 class="svc-title">BuddyPress Customization</h3>
-              <p class="svc-desc">Social communities, groups, and messaging integrated into your brand.</p>
+              <h3 class="svc-title">AI Chatbots</h3>
+              <p class="svc-desc">Intelligent conversational agents powered by LLMs and your data.</p>
             </div>
           </a>
         </div>
@@ -387,6 +399,151 @@
         </div>
       </section>
 
+      <!-- Blog / Insights -->
+      <section class="blog-section">
+        <div class="container">
+          <div class="center reveal">
+            <h2 class="section-title">Latest <span class="grad">Insights</span></h2>
+            <p class="lead" style="max-width: 42rem; margin-inline: auto;">
+              Expert perspectives on web development, AI, and digital strategy to keep you ahead of the curve.
+            </p>
+          </div>
+          <div class="blog-grid">
+            <a href="blog-headless-wordpress.html" class="blog-card reveal">
+              <div class="blog-card-img">
+                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop" alt="Modern WordPress" loading="lazy" />
+                <span class="blog-card-tag">WordPress</span>
+              </div>
+              <div class="blog-card-body">
+                <div class="blog-card-meta">
+                  <span>📅 Mar 5, 2026</span>
+                  <span>⏱ 6 min read</span>
+                </div>
+                <h3>Headless WordPress in 2026: When It Makes Sense and When It Doesn't</h3>
+                <p>A practical guide to choosing between traditional and headless WordPress architectures for your next project.</p>
+              </div>
+              <div class="blog-card-footer">
+                <span class="blog-read-more">Read More →</span>
+              </div>
+            </a>
+            <a href="blog-ai-chatbots.html" class="blog-card reveal">
+              <div class="blog-card-img">
+                <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2070&auto=format&fit=crop" alt="AI Development" loading="lazy" />
+                <span class="blog-card-tag">AI</span>
+              </div>
+              <div class="blog-card-body">
+                <div class="blog-card-meta">
+                  <span>📅 Feb 20, 2026</span>
+                  <span>⏱ 8 min read</span>
+                </div>
+                <h3>Building Production-Ready AI Chatbots: Lessons from 50+ Deployments</h3>
+                <p>Key patterns, common pitfalls, and battle-tested strategies for shipping AI chatbots that users actually trust.</p>
+              </div>
+              <div class="blog-card-footer">
+                <span class="blog-read-more">Read More →</span>
+              </div>
+            </a>
+            <a href="blog-headless-commerce.html" class="blog-card reveal">
+              <div class="blog-card-img">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop" alt="E-commerce Performance" loading="lazy" />
+                <span class="blog-card-tag">E-commerce</span>
+              </div>
+              <div class="blog-card-body">
+                <div class="blog-card-meta">
+                  <span>📅 Feb 8, 2026</span>
+                  <span>⏱ 5 min read</span>
+                </div>
+                <h3>How We Increased Conversion Rates by 40% with Headless Commerce</h3>
+                <p>A deep dive into our recent Shopify-to-headless migration and the performance gains that followed.</p>
+              </div>
+              <div class="blog-card-footer">
+                <span class="blog-read-more">Read More →</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="faq-section">
+        <div class="container">
+          <div class="center reveal">
+            <h2 class="section-title">Frequently Asked <span class="grad">Questions</span></h2>
+            <p class="lead" style="max-width: 42rem; margin-inline: auto;">
+              Everything you need to know before starting your project with us.
+            </p>
+          </div>
+          <div class="faq-container">
+            <div class="faq-item reveal">
+              <button class="faq-question" aria-expanded="false">
+                What technologies do you specialize in?
+                <span class="faq-icon"></span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  We specialize in WordPress, Laravel, MERN Stack (MongoDB, Express, React, Node.js), and modern AI/ML technologies. Whether you need a CMS-driven website, a complex SaaS platform, a real-time application, or an AI-powered chatbot — our team has deep expertise across the full stack.
+                </div>
+              </div>
+            </div>
+            <div class="faq-item reveal">
+              <button class="faq-question" aria-expanded="false">
+                How long does a typical project take?
+                <span class="faq-icon"></span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  Timeline depends on the project scope. A standard WordPress site takes 4–6 weeks. Custom web applications typically run 8–16 weeks. AI chatbot integrations can be deployed in 3–6 weeks. We provide detailed timelines during our discovery phase and keep you updated with weekly progress reports.
+                </div>
+              </div>
+            </div>
+            <div class="faq-item reveal">
+              <button class="faq-question" aria-expanded="false">
+                Do you offer ongoing support after launch?
+                <span class="faq-icon"></span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  Absolutely. We offer dedicated care plans that include security updates, performance monitoring, bug fixes, and feature enhancements. Our support packages range from basic maintenance to full-service retainers with guaranteed response times and proactive optimization.
+                </div>
+              </div>
+            </div>
+            <div class="faq-item reveal">
+              <button class="faq-question" aria-expanded="false">
+                What is your pricing model?
+                <span class="faq-icon"></span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  We offer both fixed-price and time-and-materials models depending on project complexity. Fixed-price works well for clearly defined projects, while T&M is ideal for evolving requirements. Every engagement starts with a free consultation where we scope the work and provide a transparent estimate.
+                </div>
+              </div>
+            </div>
+            <div class="faq-item reveal">
+              <button class="faq-question" aria-expanded="false">
+                Can you work with our existing team?
+                <span class="faq-icon"></span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  Yes — team augmentation is one of our strengths. We can embed developers into your existing workflow, follow your code standards and branching strategies, and participate in your standups and sprint ceremonies. Think of us as a seamless extension of your in-house team.
+                </div>
+              </div>
+            </div>
+            <div class="faq-item reveal">
+              <button class="faq-question" aria-expanded="false">
+                How do you ensure the security of our project?
+                <span class="faq-icon"></span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  Security is baked into every stage of our process. We follow OWASP guidelines, conduct code reviews focused on security patterns, run automated vulnerability scans in CI/CD, and use encrypted secrets management. For sensitive projects, we offer penetration testing and compliance audits (SOC 2, HIPAA, PCI DSS).
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- CTA -->
       <section class="cta">
         <div class="cta-bg"></div>
@@ -422,12 +579,13 @@
           </ul>
         </div>
         <div class="footer-col">
-          <h4 class="footer-title">Services</h4>
+          <h4 class="footer-title">Technologies</h4>
           <ul class="footer-list">
-            <li>Custom WordPress</li>
-            <li>Laravel Web Apps</li>
-            <li>Full Stack React</li>
-            <li>E-Commerce Setup</li>
+            <li><a href="wordpress-development.html">WordPress</a></li>
+            <li><a href="laravel-development.html">Laravel</a></li>
+            <li><a href="mern-stack.html">MERN Stack</a></li>
+            <li><a href="fullstack-development.html">Full-Stack</a></li>
+            <li><a href="ai-chatbots.html">AI Chatbots</a></li>
           </ul>
         </div>
         <div class="footer-col">
