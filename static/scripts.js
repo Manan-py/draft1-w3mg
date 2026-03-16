@@ -1,12 +1,16 @@
-// Navbar scroll state (glass effect on scroll or non-home pages)
+// Navbar scroll state + topbar hide
 (function () {
   var header = document.querySelector('.header');
+  var topbar = document.querySelector('.topbar');
   if (!header) return;
   function onScroll() {
-    if (window.scrollY > 20) {
+    var scrolled = window.scrollY > 20;
+    if (scrolled) {
       header.classList.add('scrolled');
+      if (topbar) topbar.classList.add('hidden');
     } else {
       header.classList.remove('scrolled');
+      if (topbar) topbar.classList.remove('hidden');
     }
   }
   window.addEventListener('scroll', onScroll, { passive: true });

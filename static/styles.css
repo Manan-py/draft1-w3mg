@@ -70,10 +70,71 @@ img {
   padding: 0 1rem;
 }
 
+/* Top announcement bar */
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 55;
+  background: linear-gradient(90deg, #0f172a 0%, #1e3a5f 40%, #2563eb 70%, #7c3aed 100%);
+  padding: 0.5rem 0;
+  text-align: center;
+  overflow: hidden;
+}
+.topbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+}
+.topbar-text {
+  color: rgba(255,255,255,0.92);
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+.topbar-text strong {
+  color: #fff;
+  font-weight: 900;
+}
+.topbar-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.4);
+  flex-shrink: 0;
+}
+.topbar-shimmer {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.06) 25%, rgba(255,255,255,0.12) 50%, rgba(255,255,255,0.06) 75%, transparent 100%);
+  animation: shimmer 6s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes shimmer {
+  0% { transform: translateX(-30%); }
+  100% { transform: translateX(30%); }
+}
+.topbar.hidden {
+  transform: translateY(-100%);
+  transition: transform 0.35s ease;
+}
+.topbar {
+  transition: transform 0.35s ease;
+}
+@media (min-width: 768px) {
+  .topbar-text { font-size: 0.88rem; letter-spacing: 0.08em; }
+}
+
 /* Header / Navbar */
 .header {
   position: fixed;
-  top: 0;
+  top: 36px;
   left: 0;
   right: 0;
   z-index: 50;
@@ -81,7 +142,10 @@ img {
   /* Separate color vs. image so color can animate smoothly */
   background-color: rgba(255,255,255,0); /* transparent */
   background-image: linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0));
-  transition: background-color 300ms ease, border-color 300ms ease, box-shadow 300ms ease, -webkit-backdrop-filter 300ms ease, backdrop-filter 300ms ease;
+  transition: top 300ms ease, background-color 300ms ease, border-color 300ms ease, box-shadow 300ms ease, -webkit-backdrop-filter 300ms ease, backdrop-filter 300ms ease;
+}
+.header.scrolled {
+  top: 0;
 }
 
 .nav {
