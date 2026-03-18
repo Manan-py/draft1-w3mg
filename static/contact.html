@@ -9,7 +9,66 @@
     <link rel="shortcut icon" type="image/webp" href="assets/w3mg-logo.webp" />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@26.8.1/build/css/intlTelInput.css" />
     <title>Contact — W3MG</title>
+    <style>
+      .iti { width: 100%; }
+      .iti__tel-input {
+        width: 100%;
+        height: auto;
+        padding-top: 0.85rem;
+        padding-bottom: 0.85rem;
+        padding-right: 1rem;
+        border-radius: 12px;
+        border: 1.5px solid var(--border);
+        background: var(--background);
+        color: var(--foreground);
+        font-family: inherit;
+        font-size: 0.95rem;
+        outline: none;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      }
+      .iti__tel-input:focus {
+        border-color: var(--primary);
+        box-shadow: 0 0 0 4px hsl(221 83% 53% / 0.1);
+      }
+      .iti__tel-input::placeholder {
+        color: var(--muted-foreground);
+        opacity: 0.6;
+      }
+      .iti__country-container {
+        border-radius: 12px 0 0 12px;
+      }
+      .iti__selected-country-primary {
+        border-radius: 12px 0 0 12px;
+        padding-left: 12px;
+      }
+      .iti__dropdown-content {
+        border-radius: 12px;
+        border: 1.5px solid var(--border);
+        box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        max-height: 260px;
+      }
+      .iti__search-input {
+        border-radius: 8px;
+        border: 1.5px solid var(--border);
+        padding: 0.5rem 0.75rem;
+        font-family: inherit;
+        font-size: 0.9rem;
+      }
+      .iti__search-input:focus {
+        border-color: var(--primary);
+        outline: none;
+      }
+      .iti__country {
+        padding: 6px 10px;
+        border-radius: 8px;
+      }
+      .iti__country:hover,
+      .iti__country--highlight {
+        background: hsl(221 83% 53% / 0.06);
+      }
+    </style>
   </head>
   <body>
     <!-- Top Bar -->
@@ -34,15 +93,104 @@
           <a href="index.html" class="nav-link">Home</a>
           <div class="nav-dropdown">
             <a href="services.html" class="nav-link">Services <span class="dropdown-arrow">▾</span></a>
-            <div class="dropdown-menu">
-              <a href="wordpress-development.html" class="dropdown-item"><span class="dropdown-item-icon" style="background:hsl(201 79% 46%/0.1);color:#0073aa;">WP</span> WordPress Development</a>
-              <a href="laravel-development.html" class="dropdown-item"><span class="dropdown-item-icon" style="background:hsl(0 84% 60%/0.1);color:#ef4444;">LV</span> Laravel Development</a>
-              <a href="mern-stack.html" class="dropdown-item"><span class="dropdown-item-icon" style="background:hsl(174 72% 56%/0.1);color:#14b8a6;">JS</span> MERN Stack</a>
-              <a href="security-devops.html" class="dropdown-item"><span class="dropdown-item-icon" style="background:hsl(263 70% 50%/0.1);color:#7c3aed;">🛡</span> Security &amp; DevOps</a>
-              <a href="headless-ecommerce.html" class="dropdown-item"><span class="dropdown-item-icon" style="background:hsl(160 84% 39%/0.1);color:#059669;">🛒</span> Headless E-commerce</a>
-              <a href="fullstack-development.html" class="dropdown-item"><span class="dropdown-item-icon" style="background:hsl(221 83% 53%/0.1);color:#2563eb;">FS</span> Full-Stack Development</a>
-              <a href="ai-models-training.html" class="dropdown-item"><span class="dropdown-item-icon" style="background:hsl(271 81% 56%/0.1);color:#9333ea;">🧠</span> AI Models Training</a>
-              <a href="ai-chatbots.html" class="dropdown-item"><span class="dropdown-item-icon" style="background:hsl(192 91% 36%/0.1);color:#0891b2;">💬</span> AI Chatbots</a>
+            <div class="mega-menu">
+              <div class="mega-menu-inner">
+                <div class="mega-col">
+                  <div class="mega-col-title">Design</div>
+                    <div class="mega-col-items">
+                  <a href="ui-ux-design.html" class="mega-item">
+                    <span class="mega-item-icon" style="background:hsl(280 80% 55%/0.1);color:#9333ea;">🎨</span>
+                    <span class="mega-item-text"><span class="mega-item-label">UI/UX Design</span><span class="mega-item-desc">Intuitive interfaces that delight users</span></span>
+                  </a>
+                  <a href="web-design.html" class="mega-item">
+                    <span class="mega-item-icon" style="background:hsl(221 83% 53%/0.1);color:#2563eb;">🌐</span>
+                    <span class="mega-item-text"><span class="mega-item-label">Web Design</span><span class="mega-item-desc">Responsive sites that convert visitors</span></span>
+                  </a>
+                  <a href="landing-page-design.html" class="mega-item">
+                    <span class="mega-item-icon" style="background:hsl(160 84% 39%/0.1);color:#059669;">🚀</span>
+                    <span class="mega-item-text"><span class="mega-item-label">Landing Page Design</span><span class="mega-item-desc">High-converting landing experiences</span></span>
+                  </a>
+                  <a href="brand-identity.html" class="mega-item">
+                    <span class="mega-item-icon" style="background:hsl(340 75% 55%/0.1);color:#e11d48;">✨</span>
+                    <span class="mega-item-text"><span class="mega-item-label">Brand Identity</span><span class="mega-item-desc">Logos, colors &amp; cohesive brand assets</span></span>
+                  </a>
+                  <a href="mobile-app-design.html" class="mega-item">
+                    <span class="mega-item-icon" style="background:hsl(25 95% 53%/0.1);color:#ea580c;">📱</span>
+                    <span class="mega-item-text"><span class="mega-item-label">Mobile App Design</span><span class="mega-item-desc">Native-feel mobile experiences</span></span>
+                  </a>
+                  <a href="product-design.html" class="mega-item">
+                    <span class="mega-item-icon" style="background:hsl(200 80% 50%/0.1);color:#0284c7;">💎</span>
+                    <span class="mega-item-text"><span class="mega-item-label">Product Design</span><span class="mega-item-desc">End-to-end product design strategy</span></span>
+                  </a>
+                                    </div>
+                </div>
+                <div class="mega-col">
+                  <div class="mega-col-title">Development</div>
+                    <div class="mega-col-items">
+                  <a href="wordpress-development.html" class="mega-item">
+                    <span class="mega-item-icon" style="background:hsl(201 79% 46%/0.1);color:#0073aa;">WP</span>
+                    <span class="mega-item-text"><span class="mega-item-label">WordPress</span><span class="mega-item-desc">Custom themes &amp; plugins</span></span>
+                  </a>
+                  <a href="laravel-development.html" class="mega-item">
+                    <span class="mega-item-icon" style="background:hsl(0 84% 60%/0.1);color:#ef4444;">LV</span>
+                    <span class="mega-item-text"><span class="mega-item-label">Laravel</span><span class="mega-item-desc">Scalable PHP applications</span></span>
+                  </a>
+                  <a href="mern-stack.html" class="mega-item">
+                    <span class="mega-item-icon" style="background:hsl(174 72% 56%/0.1);color:#14b8a6;">JS</span>
+                    <span class="mega-item-text"><span class="mega-item-label">MERN Stack</span><span class="mega-item-desc">Full JavaScript solutions</span></span>
+                  </a>
+                  <a href="fullstack-development.html" class="mega-item">
+                    <span class="mega-item-icon" style="background:hsl(221 83% 53%/0.1);color:#2563eb;">FS</span>
+                    <span class="mega-item-text"><span class="mega-item-label">Full-Stack</span><span class="mega-item-desc">End-to-end development</span></span>
+                  </a>
+                  <a href="security-devops.html" class="mega-item">
+                    <span class="mega-item-icon" style="background:hsl(263 70% 50%/0.1);color:#7c3aed;">🛡</span>
+                    <span class="mega-item-text"><span class="mega-item-label">Security &amp; DevOps</span><span class="mega-item-desc">Infrastructure &amp; compliance</span></span>
+                  </a>
+                  <a href="headless-ecommerce.html" class="mega-item">
+                    <span class="mega-item-icon" style="background:hsl(160 84% 39%/0.1);color:#059669;">🛒</span>
+                    <span class="mega-item-text"><span class="mega-item-label">Headless E-commerce</span><span class="mega-item-desc">Modern commerce platforms</span></span>
+                  </a>
+                  <a href="ai-models-training.html" class="mega-item">
+                    <span class="mega-item-icon" style="background:hsl(271 81% 56%/0.1);color:#9333ea;">🧠</span>
+                    <span class="mega-item-text"><span class="mega-item-label">AI Models Training</span><span class="mega-item-desc">Custom ML model development</span></span>
+                  </a>
+                  <a href="ai-chatbots.html" class="mega-item">
+                    <span class="mega-item-icon" style="background:hsl(192 91% 36%/0.1);color:#0891b2;">💬</span>
+                    <span class="mega-item-text"><span class="mega-item-label">AI Chatbots</span><span class="mega-item-desc">Intelligent conversational AI</span></span>
+                  </a>
+                                    </div>
+                </div>
+                <div class="mega-col">
+                  <div class="mega-col-title">Hire Us</div>
+                    <div class="mega-col-items">
+                  <a href="hire-wordpress-developer.html" class="mega-item">
+                    <span class="mega-item-icon" style="background:hsl(201 79% 46%/0.1);color:#0073aa;">👤</span>
+                    <span class="mega-item-text"><span class="mega-item-label">Hire WordPress Developer</span><span class="mega-item-desc">Expert WP developers on demand</span></span>
+                  </a>
+                  <a href="hire-laravel-developer.html" class="mega-item">
+                    <span class="mega-item-icon" style="background:hsl(0 84% 60%/0.1);color:#ef4444;">👤</span>
+                    <span class="mega-item-text"><span class="mega-item-label">Hire Laravel Developer</span><span class="mega-item-desc">Senior PHP/Laravel engineers</span></span>
+                  </a>
+                  <a href="hire-mern-developer.html" class="mega-item">
+                    <span class="mega-item-icon" style="background:hsl(174 72% 56%/0.1);color:#14b8a6;">👤</span>
+                    <span class="mega-item-text"><span class="mega-item-label">Hire MERN Developer</span><span class="mega-item-desc">JavaScript full-stack talent</span></span>
+                  </a>
+                  <a href="hire-fullstack-developer.html" class="mega-item">
+                    <span class="mega-item-icon" style="background:hsl(221 83% 53%/0.1);color:#2563eb;">👤</span>
+                    <span class="mega-item-text"><span class="mega-item-label">Hire Full-Stack Developer</span><span class="mega-item-desc">Versatile end-to-end engineers</span></span>
+                  </a>
+                  <a href="hire-uiux-designer.html" class="mega-item">
+                    <span class="mega-item-icon" style="background:hsl(280 80% 55%/0.1);color:#9333ea;">👤</span>
+                    <span class="mega-item-text"><span class="mega-item-label">Hire UI/UX Designer</span><span class="mega-item-desc">Creative design professionals</span></span>
+                  </a>
+                  <a href="hire-ai-ml-engineer.html" class="mega-item">
+                    <span class="mega-item-icon" style="background:hsl(271 81% 56%/0.1);color:#9333ea;">👤</span>
+                    <span class="mega-item-text"><span class="mega-item-label">Hire AI/ML Engineer</span><span class="mega-item-desc">Machine learning specialists</span></span>
+                  </a>
+                    </div>
+                </div>
+              </div>
             </div>
           </div>
           <a href="portfolio.html" class="nav-link">Portfolio</a>
@@ -53,69 +201,144 @@
     </header>
 
     <main>
-      <section class="pt-32 pb-24">
+      <section class="contact-hero">
         <div class="container">
-          <div class="center reveal" style="max-width:42rem;margin:0 auto 3rem;">
-            <h1 class="section-title" style="font-size:clamp(2.5rem,6vw,4rem);">
-              Let's Build Something <span class="grad">Great</span>
-            </h1>
-            <p class="lead">
-              Whether you have a specific project in mind or just want to explore possibilities, our team is ready to listen.
-            </p>
-          </div>
+          <div class="contact-hero-grid">
 
-          <div class="contact-grid">
-            <!-- Sidebar -->
-            <aside class="contact-card reveal">
-              <h3 style="font-size:1.5rem;font-weight:800;margin:0 0 1rem;">Contact Info</h3>
-              <div class="contact-list">
-                <div class="contact-row">
-                  <div class="contact-icon">📍</div>
-                  <div>
-                    <div class="contact-label">Our Office</div>
-                    <div class="contact-sub">123 Innovation Drive,<br/>Tech City, TC 10010</div>
-                  </div>
-                </div>
-                <div class="contact-row">
-                  <div class="contact-icon">📞</div>
-                  <div>
-                    <div class="contact-label">Phone</div>
-                    <div class="contact-sub">+1 (555) 123-4567</div>
-                  </div>
-                </div>
-                <div class="contact-row">
-                  <div class="contact-icon">✉️</div>
-                  <div>
-                    <div class="contact-label">Email</div>
-                    <div class="contact-sub">hello@w3mg.com</div>
-                  </div>
-                </div>
+            <!-- Left column -->
+            <div class="contact-hero-left">
+              <div class="contact-hero-kicker reveal">
+                <span>&#9679;</span> Start a project
               </div>
-            </aside>
+              <h1 class="contact-hero-title reveal">
+                Let's Build Something <span class="highlight">Remarkable</span>
+              </h1>
+              <p class="contact-hero-sub reveal">
+                Ready to launch something exceptional? Share your details and let's turn your idea into a high-impact digital product.
+              </p>
+              <div class="contact-hero-cta reveal">
+                <a href="#contactForm" class="btn btn-primary">Book a Call</a>
+              </div>
 
-            <!-- Form -->
-            <section class="contact-form reveal">
-              <h3 style="font-size:1.75rem;font-weight:800;margin:0 0 1rem;">Send us a message</h3>
-              <form id="contactForm" class="form">
-                <div class="form-row">
-                  <label class="form-label">Your Name</label>
-                  <input class="form-input" name="name" placeholder="John Doe" />
-                  <div class="form-error" data-error-for="name"></div>
+              <!-- Testimonial -->
+              <div class="contact-quote slide-in-left">
+                <div class="contact-quote-icon">"</div>
+                <p>"W3MG boosted our user engagement by 40% with a sleek, intuitive interface that builds instant trust."</p>
+                <div class="contact-quote-author">— Satisfied Client</div>
+              </div>
+
+              <!-- Quick contact pills -->
+              <div class="contact-info-row reveal">
+                <a href="mailto:hello@w3mg.com" class="contact-pill">
+                  <span>✉️</span> hello@w3mg.com
+                </a>
+                <a href="tel:+15551234567" class="contact-pill">
+                  <span>📞</span> +1 (555) 123-4567
+                </a>
+              </div>
+            </div>
+
+            <!-- Right column — Form -->
+            <div class="contact-form-card slide-in-right" id="contactForm">
+              <h2>Tell us about your project</h2>
+              <p class="lead">Fill in the details below and we'll get back to you within 24 hours.</p>
+
+              <form class="form-v2" id="contactFormEl">
+                <!-- Name + Email row -->
+                <div class="form-v2-row">
+                  <div class="form-v2-field">
+                    <label class="form-v2-label" for="cf-name">Your Name</label>
+                    <input type="text" id="cf-name" name="name" class="form-v2-input" placeholder="John Doe" />
+                    <div class="form-v2-error" data-error-for="name"></div>
+                  </div>
+                  <div class="form-v2-field">
+                    <label class="form-v2-label" for="cf-email">Email Address</label>
+                    <input type="email" id="cf-email" name="email" class="form-v2-input" placeholder="john@example.com" />
+                    <div class="form-v2-error" data-error-for="email"></div>
+                  </div>
                 </div>
-                <div class="form-row">
-                  <label class="form-label">Email Address</label>
-                  <input class="form-input" name="email" placeholder="john@example.com" />
-                  <div class="form-error" data-error-for="email"></div>
+
+                <!-- Company + Phone row -->
+                <div class="form-v2-row">
+                  <div class="form-v2-field">
+                    <label class="form-v2-label" for="cf-company">Company Name</label>
+                    <input type="text" id="cf-company" name="company" class="form-v2-input" placeholder="Acme Inc." />
+                  </div>
+                  <div class="form-v2-field">
+                    <label class="form-v2-label" for="cf-phone">Phone Number</label>
+                    <input type="tel" id="cf-phone" name="phone" maxlength="15" />
+                    <div class="form-v2-error" data-error-for="phone"></div>
+                  </div>
                 </div>
-                <div class="form-row">
-                  <label class="form-label">Message</label>
-                  <textarea class="form-input" rows="6" name="message" placeholder="Tell us about your project requirements..."></textarea>
-                  <div class="form-error" data-error-for="message"></div>
+
+                <!-- Service + Budget row -->
+                <div class="form-v2-row">
+                  <div class="form-v2-field">
+                    <label class="form-v2-label" for="cf-service">Service</label>
+                    <select id="cf-service" name="service" class="form-v2-input">
+                      <option value="" disabled selected>Select a Service</option>
+                      <option>WordPress Development</option>
+                      <option>Laravel Development</option>
+                      <option>MERN Stack Development</option>
+                      <option>Security & DevOps</option>
+                      <option>Headless E-commerce</option>
+                      <option>Full-Stack Development</option>
+                      <option>AI Models Training</option>
+                      <option>AI Chatbots</option>
+                      <option>UI/UX Design</option>
+                      <option>Other</option>
+                    </select>
+                  </div>
+                  <div class="form-v2-field">
+                    <label class="form-v2-label" for="cf-budget">Budget</label>
+                    <select id="cf-budget" name="budget" class="form-v2-input">
+                      <option value="" disabled selected>Select a Budget</option>
+                      <option>Less than $5,000</option>
+                      <option>$5,000 – $10,000</option>
+                      <option>$10,000 – $25,000</option>
+                      <option>$25,000 – $50,000</option>
+                      <option>$50,000+</option>
+                    </select>
+                  </div>
                 </div>
-                <button class="btn btn-primary" type="submit" id="submitBtn">Send Message</button>
+
+                <!-- Message -->
+                <div class="form-v2-field">
+                  <label class="form-v2-label" for="cf-message">Message</label>
+                  <textarea id="cf-message" name="message" class="form-v2-input" rows="5" placeholder="Tell us about your project, goals, and timeline..."></textarea>
+                  <div class="form-v2-error" data-error-for="message"></div>
+                </div>
+
+                <!-- File upload -->
+                <div class="form-v2-field">
+                  <label class="form-v2-label">Upload File</label>
+                  <div class="form-v2-file">
+                    <input type="file" name="attachment" accept=".pdf,.doc,.docx,.png,.jpg,.jpeg,.zip" />
+                    <div class="form-v2-file-icon">📎</div>
+                    <div>
+                      <div class="form-v2-file-text" id="file-text">Choose a file or drag & drop</div>
+                      <div class="form-v2-file-hint">PDF, DOC, PNG, JPG, ZIP — Max 10 MB</div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Terms checkbox -->
+                <label class="form-v2-check">
+                  <input type="checkbox" name="terms" />
+                  <span class="form-v2-check-label">
+                    I agree with the <a href="#">Terms</a> and <a href="#">Privacy Policy</a>
+                  </span>
+                </label>
+
+                <!-- Submit -->
+                <button type="submit" class="form-v2-submit" id="submitBtn">
+                  Send Message
+                </button>
               </form>
-              <div id="formToast" class="toast" role="status" aria-live="polite" hidden>Message sent!</div>
-            </section>
+
+              <div id="formToast" class="toast" role="status" aria-live="polite" hidden>Message sent successfully!</div>
+            </div>
+
           </div>
         </div>
       </section>
@@ -174,12 +397,61 @@
     </footer>
 
     <script src="./scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@26.8.1/build/js/intlTelInput.min.js"></script>
     <script>
-      // lightweight validation + toast (no backend)
+      var phoneInput = document.getElementById('cf-phone');
+      var iti = window.intlTelInput(phoneInput, {
+        initialCountry: "auto",
+        geoIpLookup: function(callback) {
+          fetch("https://ipapi.co/json")
+            .then(function(res) { return res.json(); })
+            .then(function(data) { callback(data.country_code); })
+            .catch(function() { callback("us"); });
+        },
+        countrySearch: true,
+        showFlags: true,
+        separateDialCode: true,
+        strictMode: true,
+        formatOnDisplay: true,
+        formatAsYouType: true,
+        loadUtilsOnInit: "https://cdn.jsdelivr.net/npm/intl-tel-input@26.8.1/build/js/utils.js"
+      });
+
+      phoneInput.addEventListener('keydown', function (e) {
+        var allowed = ['Backspace','Delete','Tab','Escape','Enter','ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Home','End'];
+        if (allowed.indexOf(e.key) !== -1) return;
+        if ((e.ctrlKey || e.metaKey) && (e.key === 'a' || e.key === 'c' || e.key === 'v' || e.key === 'x')) return;
+        if (e.key === '+' && phoneInput.selectionStart === 0) return;
+        if (!/^[0-9]$/.test(e.key)) {
+          e.preventDefault();
+        }
+      });
+      phoneInput.addEventListener('input', function () {
+        phoneInput.value = phoneInput.value.replace(/[^\d\s\-()+ ]/g, '');
+        var digits = phoneInput.value.replace(/\D/g, '');
+        if (digits.length > 15) {
+          phoneInput.value = phoneInput.value.slice(0, -1);
+        }
+      });
+    </script>
+    <script>
       (function () {
-        var form = document.getElementById('contactForm');
+        var form = document.getElementById('contactFormEl');
         var toast = document.getElementById('formToast');
         var btn = document.getElementById('submitBtn');
+        var fileInput = document.querySelector('.form-v2-file input[type="file"]');
+        var fileText = document.getElementById('file-text');
+
+        if (fileInput && fileText) {
+          fileInput.addEventListener('change', function () {
+            if (fileInput.files.length > 0) {
+              fileText.textContent = fileInput.files[0].name;
+            } else {
+              fileText.textContent = 'Choose a file or drag & drop';
+            }
+          });
+        }
+
         if (!form) return;
         function setError(name, msg) {
           var el = document.querySelector('[data-error-for="'+name+'"]');
@@ -187,7 +459,7 @@
         }
         function validate(values) {
           var ok = true;
-          setError('name'); setError('email'); setError('message');
+          setError('name'); setError('email'); setError('message'); setError('phone');
           if (!values.name || values.name.trim().length < 2) {
             setError('name', 'Please enter your name.');
             ok = false;
@@ -195,6 +467,10 @@
           var emailOk = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(values.email || '');
           if (!emailOk) {
             setError('email', 'Enter a valid email address.');
+            ok = false;
+          }
+          if (phoneInput.value.trim().length > 0 && !iti.isValidNumber()) {
+            setError('phone', 'Please enter a valid phone number.');
             ok = false;
           }
           if (!values.message || values.message.trim().length < 10) {
@@ -214,13 +490,14 @@
             btn.disabled = false;
             btn.textContent = 'Send Message';
             form.reset();
+            iti.setNumber('');
+            if (fileText) fileText.textContent = 'Choose a file or drag & drop';
             toast.hidden = false;
-            toast.textContent = 'Message sent!';
-            setTimeout(function () { toast.hidden = true; }, 2500);
-          }, 900);
+            toast.textContent = 'Message sent successfully!';
+            setTimeout(function () { toast.hidden = true; }, 3000);
+          }, 1200);
         });
       })();
     </script>
   </body>
-  </html>
-
+</html>
