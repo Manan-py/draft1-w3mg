@@ -171,8 +171,9 @@ img {
   flex-shrink: 0;
 }
 
-.logo-img { height: 28px; display: block; }
-@media (min-width: 768px) { .logo-img { height: 60px; } }
+.logo-img { height: 50px; display: block; transition: height 0.3s ease; }
+@media (min-width: 768px) { .logo-img { height: 50px; } }
+.header.scrolled .logo-img { height: 30px; }
 
 @media (min-width: 1024px) {
   body.home .nav .logo {
@@ -1001,6 +1002,39 @@ img {
 .svc-card:hover .svc-title { transform: translateY(-12px); letter-spacing: 0.2px; }
 .svc-card:hover .svc-desc { opacity: 1; transform: translateY(0); }
 
+/* Lunar-style service cards (icon + border glow on hover) */
+.svc-card-lunar {
+  border: 1px solid transparent;
+  transition: border-color 0.35s ease, box-shadow 0.35s ease, transform 0.35s ease;
+}
+.svc-card-lunar:hover {
+  border-color: var(--lunar-accent, hsl(187 92% 69%));
+  box-shadow: 0 0 0 1px var(--lunar-accent, hsl(187 92% 69% / 0.3)), 0 20px 50px -15px rgba(0, 0, 0, 0.4);
+  transform: translateY(-4px);
+}
+.svc-card-lunar .svc-card-lunar-icon {
+  position: absolute;
+  top: 1.25rem;
+  left: 1.25rem;
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  z-index: 2;
+  transition: background 0.35s ease, transform 0.35s ease;
+}
+.svc-card-lunar .svc-card-lunar-icon img {
+  filter: brightness(0) invert(1);
+  opacity: 0.95;
+}
+.svc-card-lunar:hover .svc-card-lunar-icon {
+  background: var(--lunar-accent, hsl(187 92% 69%));
+  transform: scale(1.08);
+}
+
 /* Testimonials */
 .testimonials {
   padding: 4rem 0 3rem;
@@ -1688,6 +1722,112 @@ img {
   opacity: 0.75;
   font-weight: 700;
   font-size: 1.05rem;
+}
+
+/* Lunar-style metrics (dark banner with tech icons) */
+.metrics-lunar {
+  position: relative;
+  padding: 1.25rem 0;
+  background: #0b1220;
+  overflow: hidden;
+}
+.metrics-lunar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(600px 300px at 20% 0%, hsl(187 92% 69% / 0.06), transparent 50%),
+    radial-gradient(500px 250px at 80% 10%, hsl(187 92% 69% / 0.04), transparent 50%);
+  pointer-events: none;
+}
+.metrics-lunar-stars {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(1.5px 1.5px at 10% 20% rgba(6, 182, 212, 0.4), transparent),
+    radial-gradient(1.5px 1.5px at 25% 35% rgba(6, 182, 212, 0.3), transparent),
+    radial-gradient(1.5px 1.5px at 40% 15% rgba(6, 182, 212, 0.35), transparent),
+    radial-gradient(1.5px 1.5px at 60% 40% rgba(6, 182, 212, 0.25), transparent),
+    radial-gradient(1.5px 1.5px at 75% 25% rgba(6, 182, 212, 0.3), transparent),
+    radial-gradient(1.5px 1.5px at 90% 50% rgba(6, 182, 212, 0.2), transparent);
+  pointer-events: none;
+}
+.metrics-lunar-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+@media (min-width: 768px) {
+  .metrics-lunar-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    padding: 0 2rem;
+  }
+}
+.metrics-lunar-item {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.65rem 1rem;
+  border-radius: 12px;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+.metrics-lunar-item:hover {
+  background: rgba(6, 182, 212, 0.06);
+  transform: translateY(-2px);
+}
+@media (min-width: 768px) {
+  .metrics-lunar-item {
+    flex-direction: row;
+    align-items: center;
+    padding: 0.75rem 1.25rem;
+    border-left: 1px solid rgba(148, 163, 184, 0.15);
+  }
+  .metrics-lunar-item:first-child {
+    border-left: none;
+    padding-left: 0;
+  }
+}
+.metrics-lunar-icon {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: rgba(6, 182, 212, 0.12);
+  color: #22d3ee;
+  flex-shrink: 0;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+.metrics-lunar-icon img {
+  filter: brightness(0) saturate(100%) invert(72%) sepia(68%) saturate(1200%) hue-rotate(170deg);
+  opacity: 0.95;
+}
+.metrics-lunar-item:hover .metrics-lunar-icon {
+  background: rgba(6, 182, 212, 0.2);
+  transform: scale(1.05);
+}
+.metrics-lunar-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+.metrics-lunar-value {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+  color: white;
+  line-height: 1.1;
+}
+.metrics-lunar-label {
+  font-size: 0.82rem;
+  color: #94a3b8;
+  font-weight: 600;
 }
 
 /* Case Studies (horizontal snap carousel) */

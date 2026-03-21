@@ -187,33 +187,45 @@
         </div>
       </section>
 
-      <!-- Quick Tagline (logos omitted to avoid placeholders) -->
-      <section class="tagline">
-        <div class="container">
-          <p class="eyebrow">TRUSTED BY INNOVATIVE COMPANIES</p>
-        </div>
-      </section>
-
-       <!-- Metrics / Achievements -->
-       <section class="metrics">
-        <div class="container metrics-grid">
-          <div class="metric">
-            <div class="metric-value">
-              <span class="countup" data-target="13" data-suffix="+">0</span>
+       <!-- Metrics / Achievements (Lunar-style dark banner with tech icons) -->
+       <section class="metrics metrics-lunar">
+        <div class="metrics-lunar-stars" aria-hidden="true"></div>
+        <div class="container metrics-lunar-grid">
+          <div class="metrics-lunar-item">
+            <div class="metrics-lunar-icon">
+              <img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/icons/calendar3.svg" alt="" width="24" height="24" />
             </div>
-            <div class="metric-label">Years in business</div>
+            <div class="metrics-lunar-content">
+              <span class="metrics-lunar-value">13+</span>
+              <span class="metrics-lunar-label">Years in business</span>
+            </div>
           </div>
-          <div class="metric">
-            <div class="metric-value">
-              <span class="countup" data-target="500" data-suffix="+">0</span>
+          <div class="metrics-lunar-item">
+            <div class="metrics-lunar-icon">
+              <img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/icons/rocket-takeoff.svg" alt="" width="24" height="24" />
             </div>
-            <div class="metric-label">Websites &amp; Projects Launched</div>
+            <div class="metrics-lunar-content">
+              <span class="metrics-lunar-value">500+</span>
+              <span class="metrics-lunar-label">Websites &amp; Projects Launched</span>
+            </div>
           </div>
-          <div class="metric">
-            <div class="metric-value">
-              <span class="countup" data-target="30" data-suffix="+">0</span>
+          <div class="metrics-lunar-item">
+            <div class="metrics-lunar-icon">
+              <img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/icons/trophy.svg" alt="" width="24" height="24" />
             </div>
-            <div class="metric-label">Awards &amp; Recognition</div>
+            <div class="metrics-lunar-content">
+              <span class="metrics-lunar-value">30+</span>
+              <span class="metrics-lunar-label">Awards &amp; Recognition</span>
+            </div>
+          </div>
+          <div class="metrics-lunar-item">
+            <div class="metrics-lunar-icon">
+              <img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/icons/code-slash.svg" alt="" width="24" height="24" />
+            </div>
+            <div class="metrics-lunar-content">
+              <span class="metrics-lunar-value">Full-Stack</span>
+              <span class="metrics-lunar-label">Built for Modern Web</span>
+            </div>
           </div>
         </div>
       </section>
@@ -228,12 +240,21 @@
   </div>
 </section>
 
-      <!-- Auto-scrolling logos (continuous with fades) -->
+      <!-- Auto-scrolling logos (continuous with fades) - Tech icons + trusted brands -->
       <section class="logo-scroller">
-        <!-- Row 1 (left) -->
-        <div class="logo-marquee dir-left" aria-label="Trusted brands">
+        <!-- Row 1 (left) - Tech stack icons first -->
+        <div class="logo-marquee dir-left" aria-label="Technologies we use">
           <div class="marquee-track">
-            <div class="logo-item" data-label="Figma"><img src="https://cdn.jsdelivr.net/npm/simple-icons/icons/figma.svg" alt="Figma" loading="lazy" decoding="async" /></div>
+            <div class="logo-item logo-item-tech" data-label="WordPress"><img src="https://cdn.jsdelivr.net/npm/simple-icons/icons/wordpress.svg" alt="WordPress" loading="lazy" decoding="async" /></div>
+            <div class="logo-item logo-item-tech" data-label="Shopify"><img src="https://cdn.jsdelivr.net/npm/simple-icons/icons/shopify.svg" alt="Shopify" loading="lazy" decoding="async" /></div>
+            <div class="logo-item logo-item-tech" data-label="MongoDB"><img src="https://cdn.jsdelivr.net/npm/simple-icons/icons/mongodb.svg" alt="MongoDB" loading="lazy" decoding="async" /></div>
+            <div class="logo-item logo-item-tech" data-label="Express"><img src="https://cdn.jsdelivr.net/npm/simple-icons/icons/express.svg" alt="Express" loading="lazy" decoding="async" /></div>
+            <div class="logo-item logo-item-tech" data-label="React"><img src="https://cdn.jsdelivr.net/npm/simple-icons/icons/react.svg" alt="React" loading="lazy" decoding="async" /></div>
+            <div class="logo-item logo-item-tech" data-label="Node.js"><img src="https://cdn.jsdelivr.net/npm/simple-icons/icons/nodedotjs.svg" alt="Node.js" loading="lazy" decoding="async" /></div>
+            <div class="logo-item logo-item-tech" data-label="Laravel"><img src="https://cdn.jsdelivr.net/npm/simple-icons/icons/laravel.svg" alt="Laravel" loading="lazy" decoding="async" /></div>
+            <div class="logo-item logo-item-tech" data-label="PHP"><img src="https://cdn.jsdelivr.net/npm/simple-icons/icons/php.svg" alt="PHP" loading="lazy" decoding="async" /></div>
+            <div class="logo-item logo-item-tech" data-label="Python"><img src="https://cdn.jsdelivr.net/npm/simple-icons/icons/python.svg" alt="Python" loading="lazy" decoding="async" /></div>
+            <div class="logo-item logo-item-tech" data-label="Figma"><img src="https://cdn.jsdelivr.net/npm/simple-icons/icons/figma.svg" alt="Figma" loading="lazy" decoding="async" /></div>
             <div class="logo-item" data-label="Grammarly"><img src="https://cdn.jsdelivr.net/npm/simple-icons/icons/grammarly.svg" alt="Grammarly" loading="lazy" decoding="async" /></div>
             <div class="logo-item" data-label="Amazon"><img src="https://cdn.jsdelivr.net/npm/simple-icons/icons/amazon.svg" alt="Amazon" loading="lazy" decoding="async" /></div>
             <div class="logo-item" data-label="Booking.com"><img src="https://cdn.jsdelivr.net/npm/simple-icons/icons/bookingdotcom.svg" alt="Booking.com" loading="lazy" decoding="async" /></div>
@@ -262,9 +283,13 @@
           </div>
           </div>
         </div>
-        <!-- Row 2 (right) -->
-        <div class="logo-marquee dir-right" aria-hidden="false">
+        <!-- Row 2 (right) - More tech + brands -->
+        <div class="logo-marquee dir-right" aria-label="Trusted brands and technologies">
           <div class="marquee-track">
+            <div class="logo-item logo-item-tech" data-label="WooCommerce"><img src="https://cdn.jsdelivr.net/npm/simple-icons/icons/woocommerce.svg" alt="WooCommerce" loading="lazy" decoding="async" /></div>
+            <div class="logo-item logo-item-tech" data-label="Tailwind"><img src="https://cdn.jsdelivr.net/npm/simple-icons/icons/tailwindcss.svg" alt="Tailwind CSS" loading="lazy" decoding="async" /></div>
+            <div class="logo-item logo-item-tech" data-label="Vue.js"><img src="https://cdn.jsdelivr.net/npm/simple-icons/icons/vuedotjs.svg" alt="Vue.js" loading="lazy" decoding="async" /></div>
+            <div class="logo-item logo-item-tech" data-label="Next.js"><img src="https://cdn.jsdelivr.net/npm/simple-icons/icons/nextdotjs.svg" alt="Next.js" loading="lazy" decoding="async" /></div>
             <div class="logo-item" data-label="Atlassian"><img src="https://cdn.jsdelivr.net/npm/simple-icons/icons/atlassian.svg" alt="Atlassian" loading="lazy" decoding="async" /></div>
             <div class="logo-item" data-label="Dropbox"><img src="https://cdn.jsdelivr.net/npm/simple-icons/icons/dropbox.svg" alt="Dropbox" loading="lazy" decoding="async" /></div>
             <div class="logo-item" data-label="PayPal"><img src="https://cdn.jsdelivr.net/npm/simple-icons/icons/paypal.svg" alt="PayPal" loading="lazy" decoding="async" /></div>
@@ -317,29 +342,41 @@
         </div>
       </section>
 
-     <!-- Services Showcase -->
-     <section class="services-showcase">
+     <!-- Services Showcase (Lunar-style cards with hover effects) -->
+     <section class="services-showcase services-showcase-lunar">
       <div class="container">
-        <div class="svc-grid">
-          <a href="wordpress-development.html" class="svc-card" style="--img: url('assets/services-1.jpg');">
+        <div class="svc-grid svc-grid-lunar">
+          <a href="wordpress-development.html" class="svc-card svc-card-lunar" style="--img: url('assets/services-1.jpg'); --lunar-accent: #0073aa;">
+            <div class="svc-card-lunar-icon">
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons/icons/wordpress.svg" alt="" width="32" height="32" />
+            </div>
             <div class="svc-inner">
               <h3 class="svc-title">WordPress Development</h3>
               <p class="svc-desc">Custom themes, plugins, and enterprise CMS solutions built for performance.</p>
             </div>
           </a>
-          <a href="laravel-development.html" class="svc-card" style="--img: url('assets/services-2.jpg');">
+          <a href="laravel-development.html" class="svc-card svc-card-lunar" style="--img: url('assets/services-2.jpg'); --lunar-accent: #ff2d20;">
+            <div class="svc-card-lunar-icon">
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons/icons/laravel.svg" alt="" width="32" height="32" />
+            </div>
             <div class="svc-inner">
               <h3 class="svc-title">Laravel Development</h3>
               <p class="svc-desc">Robust SaaS platforms, APIs, and web applications with elegant PHP.</p>
             </div>
           </a>
-          <a href="mern-stack.html" class="svc-card" style="--img: url('assets/services-3.jpg');">
+          <a href="mern-stack.html" class="svc-card svc-card-lunar" style="--img: url('assets/services-3.jpg'); --lunar-accent: #14b8a6;">
+            <div class="svc-card-lunar-icon">
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons/icons/react.svg" alt="" width="32" height="32" />
+            </div>
             <div class="svc-inner">
               <h3 class="svc-title">MERN Stack</h3>
               <p class="svc-desc">Full JavaScript applications with React, Node.js, and real-time features.</p>
             </div>
           </a>
-          <a href="ai-chatbots.html" class="svc-card" style="--img: url('assets/services-4.jpg');">
+          <a href="ai-chatbots.html" class="svc-card svc-card-lunar" style="--img: url('assets/services-4.jpg'); --lunar-accent: #9333ea;">
+            <div class="svc-card-lunar-icon">
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons/icons/openai.svg" alt="" width="32" height="32" />
+            </div>
             <div class="svc-inner">
               <h3 class="svc-title">AI Chatbots</h3>
               <p class="svc-desc">Intelligent conversational agents powered by LLMs and your data.</p>
@@ -693,7 +730,7 @@
           <ul class="footer-list">
             <li>123 Innovation Drive, Tech City, TC 10010</li>
             <li>+1 (555) 123-4567</li>
-            <li>hello@w3mg.com</li>
+            <li>contact@w3mg.com</li>
           </ul>
         </div>
       </div>
