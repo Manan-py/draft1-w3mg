@@ -1,3 +1,54 @@
+// Full-page mouse-following glow effect (works on all pages)
+function initMouseGlow() {
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var root = document.body;
+  if (!root) return;
+  var glow = document.querySelector('.mouse-glow');
+  if (!glow) {
+    glow = document.createElement('div');
+    glow.className = 'mouse-glow';
+    glow.setAttribute('aria-hidden', 'true');
+    root.insertBefore(glow, root.firstChild);
+  }
+  if (!root.id) root.id = 'mouse-bg-root';
+
+  var x = 50, y = 50;
+  var targetX = 50, targetY = 50;
+
+  function update(e) {
+    if (e && e.clientX != null) {
+      targetX = (e.clientX / window.innerWidth) * 100;
+      targetY = (e.clientY / window.innerHeight) * 100;
+    }
+  }
+  function lerp(a, b, t) { return a + (b - a) * t; }
+  function tick() {
+    x = lerp(x, targetX, 0.06);
+    y = lerp(y, targetY, 0.06);
+    root.style.setProperty('--mouse-x', x + '%');
+    root.style.setProperty('--mouse-y', y + '%');
+    requestAnimationFrame(tick);
+  }
+
+  root.classList.add('has-mouse');
+  document.addEventListener('mousemove', function (e) {
+    root.classList.add('has-mouse');
+    update(e);
+  }, { passive: true });
+  document.addEventListener('mouseout', function (e) {
+    if (!e.relatedTarget || !document.contains(e.relatedTarget)) {
+      root.classList.remove('has-mouse');
+      targetX = 50; targetY = 50;
+    }
+  });
+  tick();
+}
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initMouseGlow);
+} else {
+  initMouseGlow();
+}
+
 // Navbar scroll state + topbar hide
 (function () {
   var header = document.querySelector('.header');
