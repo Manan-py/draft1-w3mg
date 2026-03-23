@@ -638,7 +638,7 @@ img {
 }
 body.has-mouse .mouse-glow,
 #mouse-bg-root.has-mouse .mouse-glow {
-  opacity: 1;
+  opacity: 0.55;
 }
 .mouse-glow::before {
   content: "";
@@ -2203,11 +2203,60 @@ body.has-mouse .mouse-glow,
   grid-template-columns: repeat(1, minmax(0, 1fr));
   gap: 1.25rem;
 }
+
+/* About page: grouped team layout (Director / Dev Team / BDE) */
+.team-groups {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.team-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.team-group-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 900;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.85rem;
+}
+
+/* Subgroup grids (so Director/Dev/BDE render as separate full-width sections) */
+.team-group--director .team-grid {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
 @media (min-width: 640px) {
-  .team-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .team-group--director .team-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 @media (min-width: 1024px) {
-  .team-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .team-group--director .team-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.team-group--dev .team-grid,
+.team-group--bde .team-grid {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+@media (min-width: 640px) {
+  .team-group--dev .team-grid,
+  .team-group--bde .team-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1024px) {
+  .team-group--dev .team-grid,
+  .team-group--bde .team-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 .team-card h3 {
   margin: 0.5rem 0 0.25rem;
