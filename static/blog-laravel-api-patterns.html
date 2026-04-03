@@ -9,7 +9,7 @@
     <link rel="shortcut icon" type="image/png" href="assets/Favicon%20W3MG.png" />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles.css" />
-    <title>Headless E-commerce — W3MG</title>
+    <title>Laravel API Patterns We Use in Production — W3MG Blog</title>
   </head>
   <body>
     <!-- Top Bar -->
@@ -35,7 +35,7 @@
         <nav class="nav-links">
           <a href="index.html" class="nav-link">Home</a>
           <div class="nav-dropdown">
-            <a href="services.html" class="nav-link active">Services <span class="dropdown-arrow">▾</span></a>
+            <a href="services.html" class="nav-link">Services <span class="dropdown-arrow">▾</span></a>
             <div class="mega-menu">
               <div class="mega-menu-inner">
                 <div class="mega-col">
@@ -146,195 +146,176 @@
 
     <main>
       <!-- Hero -->
-      <section class="tech-hero tech-hero--ecommerce">
-        <div class="tech-particles">
-          <span></span><span></span><span></span><span></span>
-          <span></span><span></span><span></span><span></span>
-        </div>
-        <div class="container">
-          <div class="tech-hero-inner">
-            <div class="tech-hero-content">
-              <div class="tech-badge reveal">Commerce Reimagined</div>
-              <h1 class="tech-hero-title reveal">
-                Next-Generation<br />
-                <span class="highlight" style="background: linear-gradient(90deg, #34d399, #2dd4bf); -webkit-background-clip: text; background-clip: text;">Headless E-commerce</span>
-              </h1>
-              <p class="tech-hero-sub reveal">
-                Decouple your storefront from your backend for unmatched speed, flexibility, and omnichannel experiences. Custom frontends powered by best-in-class commerce APIs.
-              </p>
-              <div class="tech-hero-ctas reveal">
-                <a href="contact.html" class="btn btn-ghost-onblue">Launch Your Store</a>
-                <a href="portfolio.html" class="btn btn-outline-onblue">See Case Studies</a>
-              </div>
+      <section class="blog-hero">
+        <img
+          class="blog-hero-img"
+          src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop"
+          alt="Laravel development"
+        />
+        <div class="blog-hero-content">
+          <div class="container">
+            <div class="blog-breadcrumb reveal">
+              <a href="index.html">Home</a>
+              <span class="bc-sep">/</span>
+              <a href="blogs.html">Blog</a>
+              <span class="bc-sep">/</span>
+              <span>Laravel APIs</span>
             </div>
-            <div class="tech-hero-visual">
-              <div class="tech-float-card reveal">
-                <div class="tech-float-icon" style="background: linear-gradient(135deg, #059669, #14b8a6);">🛒</div>
-                <div class="tech-float-title">Headless Commerce</div>
-                <div class="tech-float-sub">Lightning-fast storefronts with 3x higher conversion rates and unlimited design freedom.</div>
-                <div class="tech-float-bars">
-                  <div class="tech-bar"><span style="width: 97%; background: linear-gradient(90deg, #059669, #14b8a6);"></span></div>
-                  <div class="tech-bar"><span style="width: 92%; background: linear-gradient(90deg, #059669, #14b8a6);"></span></div>
-                  <div class="tech-bar"><span style="width: 95%; background: linear-gradient(90deg, #059669, #14b8a6);"></span>                    </div>
-                </div>
-                </div>
-              </div>
+            <span class="blog-hero-tag reveal" style="background: #ef4444;">Laravel</span>
+            <h1 class="blog-hero-title reveal">Laravel API Design Patterns We Ship in Production</h1>
+            <div class="blog-hero-meta reveal">
+              <span>
+                <img class="blog-author-avatar blog-author-avatar--brand" src="assets/w3mg-logo.webp" alt="w3mg" />
+                w3mg
+              </span>
+              <span>📅 April 2, 2026</span>
+              <span>⏱ 7 min read</span>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Features -->
-      <section class="tech-features">
+      <!-- Article -->
+      <article class="blog-article">
         <div class="container">
-          <div class="center reveal">
-            <h2 class="section-title">Headless Commerce <span class="grad-green">Solutions</span></h2>
-            <p class="lead" style="max-width: 42rem; margin-inline: auto;">
-              Break free from monolithic platforms. Build shopping experiences that are as fast and flexible as your customers demand.
+          <div class="blog-prose reveal">
+            <p>
+              Laravel remains our go-to for robust backends: clear conventions, excellent queues, and a mature ecosystem. Over dozens of API projects, a few patterns consistently separate maintainable services from ones that become hard to extend.
             </p>
-          </div>
-          <div class="tech-features-grid stagger-in" style="margin-top: 2.5rem;">
-            <div class="tech-feature-card reveal">
-              <div class="tech-feature-icon" style="background: hsl(160 84% 39% / 0.1); color: #059669;">⚡</div>
-              <h3>Ultra-Fast Storefronts</h3>
-              <p>React/Next.js storefronts with static generation, ISR, and edge caching for sub-200ms page loads that boost SEO and conversions.</p>
-            </div>
-            <div class="tech-feature-card reveal">
-              <div class="tech-feature-icon" style="background: hsl(160 84% 39% / 0.1); color: #059669;">🔗</div>
-              <h3>API-First Architecture</h3>
-              <p>Shopify Storefront API, Medusa, Saleor, or custom backends — we connect any commerce engine to your frontend vision.</p>
-            </div>
-            <div class="tech-feature-card reveal">
-              <div class="tech-feature-icon" style="background: hsl(160 84% 39% / 0.1); color: #059669;">📱</div>
-              <h3>Omnichannel Commerce</h3>
-              <p>One backend powering web, mobile apps, kiosks, and IoT — consistent shopping experiences everywhere your customers are.</p>
-            </div>
-            <div class="tech-feature-card reveal">
-              <div class="tech-feature-icon" style="background: hsl(160 84% 39% / 0.1); color: #059669;">💳</div>
-              <h3>Custom Checkout Flows</h3>
-              <p>Streamlined, conversion-optimized checkout with Stripe, PayPal, Apple Pay, and regional payment providers.</p>
-            </div>
-            <div class="tech-feature-card reveal">
-              <div class="tech-feature-icon" style="background: hsl(160 84% 39% / 0.1); color: #059669;">🔍</div>
-              <h3>Search & Discovery</h3>
-              <p>AI-powered product search with Algolia or Elasticsearch — faceted filtering, autocomplete, and personalized recommendations.</p>
-            </div>
-            <div class="tech-feature-card reveal">
-              <div class="tech-feature-icon" style="background: hsl(160 84% 39% / 0.1); color: #059669;">📊</div>
-              <h3>Analytics & Optimization</h3>
-              <p>Conversion tracking, A/B testing, heat maps, and real-time dashboards to continuously optimize your revenue funnel.</p>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      <!-- Tech Stack -->
-      <section class="tech-stack">
-        <div class="container center">
-          <h2 class="section-title reveal">Commerce <span class="grad-green">Tech Stack</span></h2>
-          <p class="lead reveal" style="max-width: 42rem; margin-inline: auto;">
-            Best-in-class tools for building modern commerce experiences.
-          </p>
-          <div class="tech-stack-grid reveal">
-            <div class="tech-stack-item"><img src="https://cdn.jsdelivr.net/npm/simple-icons/icons/shopify.svg" alt="Shopify" loading="lazy"> Shopify</div>
-            <div class="tech-stack-item"><img src="https://cdn.jsdelivr.net/npm/simple-icons/icons/nextdotjs.svg" alt="Next.js" loading="lazy"> Next.js</div>
-            <div class="tech-stack-item"><img src="https://cdn.jsdelivr.net/npm/simple-icons/icons/react.svg" alt="React" loading="lazy"> React</div>
-            <div class="tech-stack-item"><img src="https://cdn.jsdelivr.net/npm/simple-icons/icons/stripe.svg" alt="Stripe" loading="lazy"> Stripe</div>
-            <div class="tech-stack-item"><img src="https://cdn.jsdelivr.net/npm/simple-icons/icons/graphql.svg" alt="GraphQL" loading="lazy"> GraphQL</div>
-            <div class="tech-stack-item"><img src="https://cdn.jsdelivr.net/npm/simple-icons/icons/algolia.svg" alt="Algolia" loading="lazy"> Algolia</div>
-            <div class="tech-stack-item"><img src="https://cdn.jsdelivr.net/npm/simple-icons/icons/contentful.svg" alt="Contentful" loading="lazy"> Contentful</div>
-            <div class="tech-stack-item"><img src="https://cdn.jsdelivr.net/npm/simple-icons/icons/vercel.svg" alt="Vercel" loading="lazy"> Vercel</div>
-            <div class="tech-stack-item"><img src="https://cdn.jsdelivr.net/npm/simple-icons/icons/tailwindcss.svg" alt="Tailwind" loading="lazy"> Tailwind CSS</div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Process -->
-      <section class="tech-process">
-        <div class="container">
-          <div class="center reveal">
-            <h2 class="section-title">From Concept to <span class="grad-green">Conversions</span></h2>
-            <p class="lead" style="max-width: 42rem; margin-inline: auto;">
-              Our proven process for launching high-converting headless stores.
+            <h2>Versioned routes and explicit contracts</h2>
+            <p>
+              We namespace APIs under <code>/api/v1</code> (and plan for <code>v2</code> before launch). Form requests validate input; API resources shape output so internal models can evolve without breaking mobile or web clients.
             </p>
-          </div>
-          <div class="tech-process-grid stagger-in">
-            <div class="tech-step reveal">
-              <div class="tech-step-num" style="background: linear-gradient(135deg, #059669, #14b8a6);">1</div>
-              <h3>Commerce Strategy</h3>
-              <p>Analyze your product catalog, customer journeys, and revenue goals to pick the right commerce platform.</p>
-              <div class="tech-step-connector"></div>
-            </div>
-            <div class="tech-step reveal">
-              <div class="tech-step-num" style="background: linear-gradient(135deg, #059669, #14b8a6);">2</div>
-              <h3>UX-Driven Design</h3>
-              <p>Conversion-focused design with A/B-tested layouts, mobile-first UI, and accessibility compliance.</p>
-              <div class="tech-step-connector"></div>
-            </div>
-            <div class="tech-step reveal">
-              <div class="tech-step-num" style="background: linear-gradient(135deg, #059669, #14b8a6);">3</div>
-              <h3>Build & Integrate</h3>
-              <p>Custom frontend development, payment gateway setup, inventory sync, and shipping provider integrations.</p>
-              <div class="tech-step-connector"></div>
-            </div>
-            <div class="tech-step reveal">
-              <div class="tech-step-num" style="background: linear-gradient(135deg, #059669, #14b8a6);">4</div>
-              <h3>Launch & Grow</h3>
-              <p>Performance testing, SEO optimization, and continuous CRO to maximize revenue post-launch.</p>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      <!-- Why Choose -->
-      <section class="tech-why">
+            <h2>Jobs, events, and idempotency</h2>
+            <p>
+              Heavy work belongs in queued jobs. For webhooks and payments, we design idempotent handlers and store external IDs so retries never double-charge or duplicate records.
+            </p>
+
+            <ul>
+              <li>Sanctum or Passport chosen per client type (first-party SPA vs third-party OAuth).</li>
+              <li>Telescope only in non-production; structured logging everywhere else.</li>
+              <li>Database transactions around multi-step writes that must succeed or roll back together.</li>
+            </ul>
+
+            <h2>Testing where it matters</h2>
+            <p>
+              Feature tests cover happy paths and critical failures; contract tests protect integrations. This balance keeps CI fast while catching regressions before they reach staging.
+            </p>
+
+            <p>
+              Need a Laravel API your team can grow into? <a href="laravel-development.html">See our Laravel development services</a> or <a href="contact.html">talk to us</a> about your roadmap.
+            </p>
+
+            <hr />
+
+          </div>
+
+          <!-- Tags & Share -->
+          <div class="blog-tags-share reveal">
+            <div class="blog-tags">
+              <a href="#" class="blog-tag">Laravel</a>
+              <a href="#" class="blog-tag">API</a>
+              <a href="#" class="blog-tag">PHP</a>
+              <a href="#" class="blog-tag">Backend</a>
+            </div>
+            <div class="blog-share">
+              <span class="blog-share-label">Share:</span>
+              <a href="#" aria-label="Share on Twitter">𝕏</a>
+              <a href="#" aria-label="Share on LinkedIn">in</a>
+              <a href="#" aria-label="Share on Facebook">f</a>
+            </div>
+          </div>
+
+          <!-- Author box -->
+          <div class="blog-author-box reveal">
+            <img
+              class="blog-author-avatar--brand"
+              src="assets/w3mg-logo.webp"
+              alt="w3mg"
+            />
+            <div>
+              <h4>w3mg</h4>
+              <p>W3MG Software and Internet Services Pvt Ltd — engineering notes from our design, development, and AI practice. <a href="contact.html">Contact us</a>.</p>
+            </div>
+          </div>
+
+        </div>
+      </article>
+
+      <!-- Related Posts -->
+      <section class="blog-related">
         <div class="container">
           <div class="center reveal">
-            <h2 class="section-title">Why Go <span class="grad-green">Headless</span> with W3MG?</h2>
+            <h2 class="section-title">Related <span class="grad">Articles</span></h2>
           </div>
-          <div class="tech-why-grid">
-            <div class="tech-why-item reveal">
-              <div class="tech-why-icon" style="background: hsl(160 84% 39% / 0.1); color: #059669;">🚀</div>
-              <div>
-                <h3>3x Faster Page Loads</h3>
-                <p>Static generation and edge deployment mean your store loads instantly — improving SEO rankings and conversion rates.</p>
+          <div class="blog-grid" style="margin-top: 2rem;">
+            <a href="blog-laravel-ai-pipeline.html" class="blog-card reveal">
+              <div class="blog-card-img">
+                <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2070&auto=format&fit=crop" alt="" loading="lazy" />
+                <span class="blog-card-tag">AI</span>
               </div>
-            </div>
-            <div class="tech-why-item reveal">
-              <div class="tech-why-icon" style="background: hsl(160 84% 39% / 0.1); color: #059669;">🎨</div>
-              <div>
-                <h3>Unlimited Design Freedom</h3>
-                <p>No template constraints — build exactly the shopping experience your brand demands.</p>
+              <div class="blog-card-body">
+                <div class="blog-card-meta">
+                  <span>📅 Mar 12, 2026</span>
+                  <span>⏱ 6 min read</span>
+                </div>
+                <h3>Connecting Laravel to LLMs Without Sacrificing Security</h3>
+                <p>Queues, secrets, and guardrails for AI features in PHP applications.</p>
               </div>
-            </div>
-            <div class="tech-why-item reveal">
-              <div class="tech-why-icon" style="background: hsl(160 84% 39% / 0.1); color: #059669;">📈</div>
-              <div>
-                <h3>Higher Conversions</h3>
-                <p>Our headless stores average 35% higher conversion rates compared to traditional monolithic platforms.</p>
+              <div class="blog-card-footer">
+                <span class="blog-read-more">Read More →</span>
               </div>
-            </div>
-            <div class="tech-why-item reveal">
-              <div class="tech-why-icon" style="background: hsl(160 84% 39% / 0.1); color: #059669;">🌍</div>
-              <div>
-                <h3>Global Scale</h3>
-                <p>Multi-currency, multi-language, and multi-region — ready to sell everywhere from day one.</p>
+            </a>
+            <a href="blog-headless-wordpress.html" class="blog-card reveal">
+              <div class="blog-card-img">
+                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop" alt="" loading="lazy" />
+                <span class="blog-card-tag">WordPress</span>
               </div>
-            </div>
+              <div class="blog-card-body">
+                <div class="blog-card-meta">
+                  <span>📅 Mar 5, 2026</span>
+                  <span>⏱ 6 min read</span>
+                </div>
+                <h3>Headless WordPress in 2026: When It Makes Sense and When It Doesn't</h3>
+                <p>A practical guide to choosing between traditional and headless WordPress architectures.</p>
+              </div>
+              <div class="blog-card-footer">
+                <span class="blog-read-more">Read More →</span>
+              </div>
+            </a>
+            <a href="blog-ai-chatbots.html" class="blog-card reveal">
+              <div class="blog-card-img">
+                <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2070&auto=format&fit=crop" alt="" loading="lazy" />
+                <span class="blog-card-tag">AI</span>
+              </div>
+              <div class="blog-card-body">
+                <div class="blog-card-meta">
+                  <span>📅 Feb 20, 2026</span>
+                  <span>⏱ 8 min read</span>
+                </div>
+                <h3>Building Production-Ready AI Chatbots: Lessons from 50+ Deployments</h3>
+                <p>Patterns and pitfalls for shipping chatbots users trust.</p>
+              </div>
+              <div class="blog-card-footer">
+                <span class="blog-read-more">Read More →</span>
+              </div>
+            </a>
           </div>
         </div>
       </section>
 
       <!-- CTA -->
-      <section class="tech-cta tech-hero--ecommerce">
-        <div class="container">
-          <h2 class="tech-cta-title reveal">Ready to Transform Your Store?</h2>
-          <p class="tech-cta-sub reveal">Let's build a headless commerce experience that converts browsers into buyers.</p>
-          <a href="contact.html" class="btn btn-onwhite reveal">Get Your Free Commerce Audit</a>
+      <section class="cta">
+        <div class="cta-bg"></div>
+        <div class="container cta-inner">
+          <h2 class="cta-title">Planning a Laravel backend?</h2>
+          <p class="cta-subtitle">We design APIs, admin panels, and integrations that stay maintainable as you scale.</p>
+          <a href="contact.html" class="btn btn-onwhite">Discuss your API</a>
         </div>
       </section>
     </main>
-
     <footer class="footer">
       <div class="container footer-grid">
         <div class="footer-brand">

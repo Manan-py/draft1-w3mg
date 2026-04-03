@@ -79,6 +79,72 @@ if (document.readyState === 'loading') {
   });
 })();
 
+// Hero floating card: rotate architecture / scale taglines every 3s
+(function () {
+  var el = document.getElementById('hero-tech-rotate');
+  if (!el) return;
+  var phrases = [
+    'Clean Architecture',
+    'Built for scale',
+    'SOLID & maintainable code',
+    'Domain-driven design',
+    'Cloud-native scalability',
+    'Modular, testable systems',
+    'Enterprise-grade reliability',
+    'Future-proof engineering',
+    'Performance under load',
+    'Separation of concerns'
+  ];
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    return;
+  }
+  var i = 0;
+  window.setInterval(function () {
+    i = (i + 1) % phrases.length;
+    el.textContent = phrases[i];
+  }, 3000);
+})();
+
+// Development services: horizontal scroll carousel + arrow visibility
+(function () {
+  var wrap = document.querySelector('.dev-svc-wrap');
+  if (!wrap) return;
+  var track = wrap.querySelector('.dev-svc-track');
+  var prev = wrap.querySelector('.dev-svc-prev');
+  var next = wrap.querySelector('.dev-svc-next');
+  if (!track || !prev || !next) return;
+  function cardStep() {
+    var first = track.querySelector('.svc-card');
+    if (!first) return 360;
+    var gap = parseFloat(getComputedStyle(track).gap || '16');
+    return first.getBoundingClientRect().width + gap;
+  }
+  function updateArrows() {
+    var maxScroll = Math.max(0, track.scrollWidth - track.clientWidth);
+    var sl = track.scrollLeft;
+    var eps = 6;
+    var canScrollBack = sl > eps;
+    var atEnd = maxScroll <= eps || sl >= maxScroll - eps;
+    prev.classList.toggle('is-visible', canScrollBack);
+    prev.setAttribute('aria-hidden', canScrollBack ? 'false' : 'true');
+    prev.tabIndex = canScrollBack ? 0 : -1;
+    next.classList.toggle('is-at-end', atEnd);
+    next.setAttribute('aria-hidden', atEnd ? 'true' : 'false');
+    next.tabIndex = atEnd ? -1 : 0;
+  }
+  prev.addEventListener('click', function () {
+    track.scrollBy({ left: -cardStep(), behavior: 'smooth' });
+  });
+  next.addEventListener('click', function () {
+    track.scrollBy({ left: cardStep(), behavior: 'smooth' });
+  });
+  track.addEventListener('scroll', updateArrows, { passive: true });
+  window.addEventListener('resize', function () {
+    window.requestAnimationFrame(updateArrows);
+  });
+  updateArrows();
+})();
+
 // Mobile mega-menu toggle + desktop hover bridge
 (function () {
   var dropdowns = document.querySelectorAll('.nav-dropdown');

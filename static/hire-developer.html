@@ -9,7 +9,66 @@
     <link rel="shortcut icon" type="image/png" href="assets/Favicon%20W3MG.png" />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles.css" />
-    <title>Headless E-commerce — W3MG</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@26.8.1/build/css/intlTelInput.css" />
+    <title>Hire a Developer — W3MG</title>
+    <style>
+      .iti { width: 100%; }
+      .iti__tel-input {
+        width: 100%;
+        height: auto;
+        padding-top: 0.85rem;
+        padding-bottom: 0.85rem;
+        padding-right: 1rem;
+        border-radius: 12px;
+        border: 1.5px solid var(--border);
+        background: var(--background);
+        color: var(--foreground);
+        font-family: inherit;
+        font-size: 0.95rem;
+        outline: none;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      }
+      .iti__tel-input:focus {
+        border-color: var(--primary);
+        box-shadow: 0 0 0 4px hsl(221 83% 53% / 0.1);
+      }
+      .iti__tel-input::placeholder {
+        color: var(--muted-foreground);
+        opacity: 0.6;
+      }
+      .iti__country-container {
+        border-radius: 12px 0 0 12px;
+      }
+      .iti__selected-country-primary {
+        border-radius: 12px 0 0 12px;
+        padding-left: 12px;
+      }
+      .iti__dropdown-content {
+        border-radius: 12px;
+        border: 1.5px solid var(--border);
+        box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        max-height: 260px;
+      }
+      .iti__search-input {
+        border-radius: 8px;
+        border: 1.5px solid var(--border);
+        padding: 0.5rem 0.75rem;
+        font-family: inherit;
+        font-size: 0.9rem;
+      }
+      .iti__search-input:focus {
+        border-color: var(--primary);
+        outline: none;
+      }
+      .iti__country {
+        padding: 6px 10px;
+        border-radius: 8px;
+      }
+      .iti__country:hover,
+      .iti__country--highlight {
+        background: hsl(221 83% 53% / 0.06);
+      }
+    </style>
   </head>
   <body>
     <!-- Top Bar -->
@@ -35,7 +94,7 @@
         <nav class="nav-links">
           <a href="index.html" class="nav-link">Home</a>
           <div class="nav-dropdown">
-            <a href="services.html" class="nav-link active">Services <span class="dropdown-arrow">▾</span></a>
+            <a href="services.html" class="nav-link">Services <span class="dropdown-arrow">▾</span></a>
             <div class="mega-menu">
               <div class="mega-menu-inner">
                 <div class="mega-col">
@@ -145,192 +204,144 @@
     </header>
 
     <main>
-      <!-- Hero -->
-      <section class="tech-hero tech-hero--ecommerce">
-        <div class="tech-particles">
-          <span></span><span></span><span></span><span></span>
-          <span></span><span></span><span></span><span></span>
-        </div>
+      <section class="contact-hero">
         <div class="container">
-          <div class="tech-hero-inner">
-            <div class="tech-hero-content">
-              <div class="tech-badge reveal">Commerce Reimagined</div>
-              <h1 class="tech-hero-title reveal">
-                Next-Generation<br />
-                <span class="highlight" style="background: linear-gradient(90deg, #34d399, #2dd4bf); -webkit-background-clip: text; background-clip: text;">Headless E-commerce</span>
+          <div class="contact-hero-grid">
+
+            <!-- Left column -->
+            <div class="contact-hero-left">
+              <div class="contact-hero-kicker reveal">
+                <span>&#9679;</span> Hire dedicated talent
+              </div>
+              <h1 class="contact-hero-title reveal">
+                Scale Your Team With <span class="highlight">Expert Developers</span>
               </h1>
-              <p class="tech-hero-sub reveal">
-                Decouple your storefront from your backend for unmatched speed, flexibility, and omnichannel experiences. Custom frontends powered by best-in-class commerce APIs.
+              <p class="contact-hero-sub reveal">
+                Need a WordPress, Laravel, MERN, or AI engineer—or a UI/UX designer? Tell us the role, timeline, and budget. We'll match you with senior talent and respond within 24 hours.
               </p>
-              <div class="tech-hero-ctas reveal">
-                <a href="contact.html" class="btn btn-ghost-onblue">Launch Your Store</a>
-                <a href="portfolio.html" class="btn btn-outline-onblue">See Case Studies</a>
+
+              <!-- Testimonial -->
+              <div class="contact-quote slide-in-left">
+                <div class="contact-quote-icon">"</div>
+                <p>"We hired MERN engineers through W3MG and had production-quality code within weeks—clear communication and strong ownership."</p>
+                <div class="contact-quote-author">— Hiring Manager</div>
               </div>
+
+              <!-- Quick contact pills -->
+              <div class="contact-info-row reveal">
+                <a href="mailto:contact@w3mg.in" class="contact-pill">
+                  <span>✉️</span> contact@w3mg.in
+                </a>
+                <a href="tel:+917499999975" class="contact-pill">
+                  <span>📞</span> +91 74999 99975
+                </a>
+              </div>
+              <address class="contact-address reveal">
+                <span class="contact-address-icon" aria-hidden="true">📍</span>
+                <span>Aadhya Tech Space, 1st Floor, SS Sapphire Building, Near Archana CinePlex, Orai, U.P. (285001), India</span>
+              </address>
             </div>
-            <div class="tech-hero-visual">
-              <div class="tech-float-card reveal">
-                <div class="tech-float-icon" style="background: linear-gradient(135deg, #059669, #14b8a6);">🛒</div>
-                <div class="tech-float-title">Headless Commerce</div>
-                <div class="tech-float-sub">Lightning-fast storefronts with 3x higher conversion rates and unlimited design freedom.</div>
-                <div class="tech-float-bars">
-                  <div class="tech-bar"><span style="width: 97%; background: linear-gradient(90deg, #059669, #14b8a6);"></span></div>
-                  <div class="tech-bar"><span style="width: 92%; background: linear-gradient(90deg, #059669, #14b8a6);"></span></div>
-                  <div class="tech-bar"><span style="width: 95%; background: linear-gradient(90deg, #059669, #14b8a6);"></span>                    </div>
+
+            <!-- Right column — Form -->
+            <div class="contact-form-card slide-in-right" id="hireForm">
+              <h2>Hire the right specialist</h2>
+              <p class="lead">Share your hiring needs below and we'll get back to you within 24 hours with next steps.</p>
+
+              <form class="form-v2" id="hireFormEl">
+                <!-- Name + Email row -->
+                <div class="form-v2-row">
+                  <div class="form-v2-field">
+                    <label class="form-v2-label" for="hf-name">Your Name</label>
+                    <input type="text" id="hf-name" name="name" class="form-v2-input" placeholder="John Doe" />
+                    <div class="form-v2-error" data-error-for="name"></div>
+                  </div>
+                  <div class="form-v2-field">
+                    <label class="form-v2-label" for="hf-email">Email Address</label>
+                    <input type="email" id="hf-email" name="email" class="form-v2-input" placeholder="john@example.com" />
+                    <div class="form-v2-error" data-error-for="email"></div>
+                  </div>
                 </div>
+
+                <!-- Company + Phone row -->
+                <div class="form-v2-row">
+                  <div class="form-v2-field">
+                    <label class="form-v2-label" for="hf-company">Company Name</label>
+                    <input type="text" id="hf-company" name="company" class="form-v2-input" placeholder="Acme Inc." />
+                  </div>
+                  <div class="form-v2-field">
+                    <label class="form-v2-label" for="hf-phone">Phone Number</label>
+                    <input type="tel" id="hf-phone" name="phone" maxlength="15" />
+                    <div class="form-v2-error" data-error-for="phone"></div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      <!-- Features -->
-      <section class="tech-features">
-        <div class="container">
-          <div class="center reveal">
-            <h2 class="section-title">Headless Commerce <span class="grad-green">Solutions</span></h2>
-            <p class="lead" style="max-width: 42rem; margin-inline: auto;">
-              Break free from monolithic platforms. Build shopping experiences that are as fast and flexible as your customers demand.
-            </p>
-          </div>
-          <div class="tech-features-grid stagger-in" style="margin-top: 2.5rem;">
-            <div class="tech-feature-card reveal">
-              <div class="tech-feature-icon" style="background: hsl(160 84% 39% / 0.1); color: #059669;">⚡</div>
-              <h3>Ultra-Fast Storefronts</h3>
-              <p>React/Next.js storefronts with static generation, ISR, and edge caching for sub-200ms page loads that boost SEO and conversions.</p>
-            </div>
-            <div class="tech-feature-card reveal">
-              <div class="tech-feature-icon" style="background: hsl(160 84% 39% / 0.1); color: #059669;">🔗</div>
-              <h3>API-First Architecture</h3>
-              <p>Shopify Storefront API, Medusa, Saleor, or custom backends — we connect any commerce engine to your frontend vision.</p>
-            </div>
-            <div class="tech-feature-card reveal">
-              <div class="tech-feature-icon" style="background: hsl(160 84% 39% / 0.1); color: #059669;">📱</div>
-              <h3>Omnichannel Commerce</h3>
-              <p>One backend powering web, mobile apps, kiosks, and IoT — consistent shopping experiences everywhere your customers are.</p>
-            </div>
-            <div class="tech-feature-card reveal">
-              <div class="tech-feature-icon" style="background: hsl(160 84% 39% / 0.1); color: #059669;">💳</div>
-              <h3>Custom Checkout Flows</h3>
-              <p>Streamlined, conversion-optimized checkout with Stripe, PayPal, Apple Pay, and regional payment providers.</p>
-            </div>
-            <div class="tech-feature-card reveal">
-              <div class="tech-feature-icon" style="background: hsl(160 84% 39% / 0.1); color: #059669;">🔍</div>
-              <h3>Search & Discovery</h3>
-              <p>AI-powered product search with Algolia or Elasticsearch — faceted filtering, autocomplete, and personalized recommendations.</p>
-            </div>
-            <div class="tech-feature-card reveal">
-              <div class="tech-feature-icon" style="background: hsl(160 84% 39% / 0.1); color: #059669;">📊</div>
-              <h3>Analytics & Optimization</h3>
-              <p>Conversion tracking, A/B testing, heat maps, and real-time dashboards to continuously optimize your revenue funnel.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+                <!-- Who to hire + Budget row -->
+                <div class="form-v2-row">
+                  <div class="form-v2-field">
+                    <label class="form-v2-label" for="hf-role">Who you want to hire</label>
+                    <select id="hf-role" name="role" class="form-v2-input">
+                      <option value="" disabled selected>Select a role</option>
+                      <option>Hire WordPress Developer</option>
+                      <option>Hire Laravel Developer</option>
+                      <option>Hire MERN Developer</option>
+                      <option>Hire Full-Stack Developer</option>
+                      <option>Hire UI/UX Designer</option>
+                      <option>Hire AI/ML Engineer</option>
+                      <option>Multiple roles / team augmentation</option>
+                      <option>Not sure — advise me</option>
+                    </select>
+                  </div>
+                  <div class="form-v2-field">
+                    <label class="form-v2-label" for="hf-budget">Budget</label>
+                    <select id="hf-budget" name="budget" class="form-v2-input">
+                      <option value="" disabled selected>Select a Budget</option>
+                      <option>Less than $5,000</option>
+                      <option>$5,000 – $10,000</option>
+                      <option>$10,000 – $25,000</option>
+                      <option>$25,000 – $50,000</option>
+                      <option>$50,000+</option>
+                    </select>
+                  </div>
+                </div>
 
-      <!-- Tech Stack -->
-      <section class="tech-stack">
-        <div class="container center">
-          <h2 class="section-title reveal">Commerce <span class="grad-green">Tech Stack</span></h2>
-          <p class="lead reveal" style="max-width: 42rem; margin-inline: auto;">
-            Best-in-class tools for building modern commerce experiences.
-          </p>
-          <div class="tech-stack-grid reveal">
-            <div class="tech-stack-item"><img src="https://cdn.jsdelivr.net/npm/simple-icons/icons/shopify.svg" alt="Shopify" loading="lazy"> Shopify</div>
-            <div class="tech-stack-item"><img src="https://cdn.jsdelivr.net/npm/simple-icons/icons/nextdotjs.svg" alt="Next.js" loading="lazy"> Next.js</div>
-            <div class="tech-stack-item"><img src="https://cdn.jsdelivr.net/npm/simple-icons/icons/react.svg" alt="React" loading="lazy"> React</div>
-            <div class="tech-stack-item"><img src="https://cdn.jsdelivr.net/npm/simple-icons/icons/stripe.svg" alt="Stripe" loading="lazy"> Stripe</div>
-            <div class="tech-stack-item"><img src="https://cdn.jsdelivr.net/npm/simple-icons/icons/graphql.svg" alt="GraphQL" loading="lazy"> GraphQL</div>
-            <div class="tech-stack-item"><img src="https://cdn.jsdelivr.net/npm/simple-icons/icons/algolia.svg" alt="Algolia" loading="lazy"> Algolia</div>
-            <div class="tech-stack-item"><img src="https://cdn.jsdelivr.net/npm/simple-icons/icons/contentful.svg" alt="Contentful" loading="lazy"> Contentful</div>
-            <div class="tech-stack-item"><img src="https://cdn.jsdelivr.net/npm/simple-icons/icons/vercel.svg" alt="Vercel" loading="lazy"> Vercel</div>
-            <div class="tech-stack-item"><img src="https://cdn.jsdelivr.net/npm/simple-icons/icons/tailwindcss.svg" alt="Tailwind" loading="lazy"> Tailwind CSS</div>
-          </div>
-        </div>
-      </section>
+                <!-- Message -->
+                <div class="form-v2-field">
+                  <label class="form-v2-label" for="hf-message">Message</label>
+                  <textarea id="hf-message" name="message" class="form-v2-input" rows="5" placeholder="Tell us about your project, goals, and timeline..."></textarea>
+                  <div class="form-v2-error" data-error-for="message"></div>
+                </div>
 
-      <!-- Process -->
-      <section class="tech-process">
-        <div class="container">
-          <div class="center reveal">
-            <h2 class="section-title">From Concept to <span class="grad-green">Conversions</span></h2>
-            <p class="lead" style="max-width: 42rem; margin-inline: auto;">
-              Our proven process for launching high-converting headless stores.
-            </p>
-          </div>
-          <div class="tech-process-grid stagger-in">
-            <div class="tech-step reveal">
-              <div class="tech-step-num" style="background: linear-gradient(135deg, #059669, #14b8a6);">1</div>
-              <h3>Commerce Strategy</h3>
-              <p>Analyze your product catalog, customer journeys, and revenue goals to pick the right commerce platform.</p>
-              <div class="tech-step-connector"></div>
-            </div>
-            <div class="tech-step reveal">
-              <div class="tech-step-num" style="background: linear-gradient(135deg, #059669, #14b8a6);">2</div>
-              <h3>UX-Driven Design</h3>
-              <p>Conversion-focused design with A/B-tested layouts, mobile-first UI, and accessibility compliance.</p>
-              <div class="tech-step-connector"></div>
-            </div>
-            <div class="tech-step reveal">
-              <div class="tech-step-num" style="background: linear-gradient(135deg, #059669, #14b8a6);">3</div>
-              <h3>Build & Integrate</h3>
-              <p>Custom frontend development, payment gateway setup, inventory sync, and shipping provider integrations.</p>
-              <div class="tech-step-connector"></div>
-            </div>
-            <div class="tech-step reveal">
-              <div class="tech-step-num" style="background: linear-gradient(135deg, #059669, #14b8a6);">4</div>
-              <h3>Launch & Grow</h3>
-              <p>Performance testing, SEO optimization, and continuous CRO to maximize revenue post-launch.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+                <!-- File upload -->
+                <div class="form-v2-field">
+                  <label class="form-v2-label">Upload File</label>
+                  <div class="form-v2-file">
+                    <input type="file" name="attachment" accept=".pdf,.doc,.docx,.png,.jpg,.jpeg,.zip" />
+                    <div class="form-v2-file-icon">📎</div>
+                    <div>
+                      <div class="form-v2-file-text" id="hire-file-text">Choose a file or drag & drop</div>
+                      <div class="form-v2-file-hint">PDF, DOC, PNG, JPG, ZIP — Max 10 MB</div>
+                    </div>
+                  </div>
+                </div>
 
-      <!-- Why Choose -->
-      <section class="tech-why">
-        <div class="container">
-          <div class="center reveal">
-            <h2 class="section-title">Why Go <span class="grad-green">Headless</span> with W3MG?</h2>
-          </div>
-          <div class="tech-why-grid">
-            <div class="tech-why-item reveal">
-              <div class="tech-why-icon" style="background: hsl(160 84% 39% / 0.1); color: #059669;">🚀</div>
-              <div>
-                <h3>3x Faster Page Loads</h3>
-                <p>Static generation and edge deployment mean your store loads instantly — improving SEO rankings and conversion rates.</p>
-              </div>
-            </div>
-            <div class="tech-why-item reveal">
-              <div class="tech-why-icon" style="background: hsl(160 84% 39% / 0.1); color: #059669;">🎨</div>
-              <div>
-                <h3>Unlimited Design Freedom</h3>
-                <p>No template constraints — build exactly the shopping experience your brand demands.</p>
-              </div>
-            </div>
-            <div class="tech-why-item reveal">
-              <div class="tech-why-icon" style="background: hsl(160 84% 39% / 0.1); color: #059669;">📈</div>
-              <div>
-                <h3>Higher Conversions</h3>
-                <p>Our headless stores average 35% higher conversion rates compared to traditional monolithic platforms.</p>
-              </div>
-            </div>
-            <div class="tech-why-item reveal">
-              <div class="tech-why-icon" style="background: hsl(160 84% 39% / 0.1); color: #059669;">🌍</div>
-              <div>
-                <h3>Global Scale</h3>
-                <p>Multi-currency, multi-language, and multi-region — ready to sell everywhere from day one.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+                <!-- Terms checkbox -->
+                <label class="form-v2-check">
+                  <input type="checkbox" name="terms" />
+                  <span class="form-v2-check-label">
+                    I agree with the <a href="terms-of-service.html">Terms</a> and <a href="privacy-policy.html">Privacy Policy</a>
+                  </span>
+                </label>
 
-      <!-- CTA -->
-      <section class="tech-cta tech-hero--ecommerce">
-        <div class="container">
-          <h2 class="tech-cta-title reveal">Ready to Transform Your Store?</h2>
-          <p class="tech-cta-sub reveal">Let's build a headless commerce experience that converts browsers into buyers.</p>
-          <a href="contact.html" class="btn btn-onwhite reveal">Get Your Free Commerce Audit</a>
+                <!-- Submit -->
+                <button type="submit" class="form-v2-submit" id="hireSubmitBtn">
+                  Send Message
+                </button>
+              </form>
+
+              <div id="hireFormToast" class="toast" role="status" aria-live="polite" hidden>Message sent successfully!</div>
+            </div>
+
+          </div>
         </div>
       </section>
     </main>
@@ -421,5 +432,107 @@
     </footer>
 
     <script src="./scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@26.8.1/build/js/intlTelInput.min.js"></script>
+    <script>
+      var phoneInput = document.getElementById('hf-phone');
+      var iti = window.intlTelInput(phoneInput, {
+        initialCountry: "auto",
+        geoIpLookup: function(callback) {
+          fetch("https://ipapi.co/json")
+            .then(function(res) { return res.json(); })
+            .then(function(data) { callback(data.country_code); })
+            .catch(function() { callback("us"); });
+        },
+        countrySearch: true,
+        showFlags: true,
+        separateDialCode: true,
+        strictMode: true,
+        formatOnDisplay: true,
+        formatAsYouType: true,
+        loadUtilsOnInit: "https://cdn.jsdelivr.net/npm/intl-tel-input@26.8.1/build/js/utils.js"
+      });
+
+      phoneInput.addEventListener('keydown', function (e) {
+        var allowed = ['Backspace','Delete','Tab','Escape','Enter','ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Home','End'];
+        if (allowed.indexOf(e.key) !== -1) return;
+        if ((e.ctrlKey || e.metaKey) && (e.key === 'a' || e.key === 'c' || e.key === 'v' || e.key === 'x')) return;
+        if (e.key === '+' && phoneInput.selectionStart === 0) return;
+        if (!/^[0-9]$/.test(e.key)) {
+          e.preventDefault();
+        }
+      });
+      phoneInput.addEventListener('input', function () {
+        phoneInput.value = phoneInput.value.replace(/[^\d\s\-()+ ]/g, '');
+        var digits = phoneInput.value.replace(/\D/g, '');
+        if (digits.length > 15) {
+          phoneInput.value = phoneInput.value.slice(0, -1);
+        }
+      });
+    </script>
+    <script>
+      (function () {
+        var form = document.getElementById('hireFormEl');
+        var toast = document.getElementById('hireFormToast');
+        var btn = document.getElementById('hireSubmitBtn');
+        var fileInput = document.querySelector('#hireFormEl .form-v2-file input[type="file"]');
+        var fileText = document.getElementById('hire-file-text');
+
+        if (fileInput && fileText) {
+          fileInput.addEventListener('change', function () {
+            if (fileInput.files.length > 0) {
+              fileText.textContent = fileInput.files[0].name;
+            } else {
+              fileText.textContent = 'Choose a file or drag & drop';
+            }
+          });
+        }
+
+        if (!form) return;
+        function setError(name, msg) {
+          var el = document.querySelector('[data-error-for="'+name+'"]');
+          if (el) el.textContent = msg || '';
+        }
+        function validate(values) {
+          var ok = true;
+          setError('name'); setError('email'); setError('message'); setError('phone');
+          if (!values.name || values.name.trim().length < 2) {
+            setError('name', 'Please enter your name.');
+            ok = false;
+          }
+          var emailOk = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(values.email || '');
+          if (!emailOk) {
+            setError('email', 'Enter a valid email address.');
+            ok = false;
+          }
+          if (phoneInput.value.trim().length > 0 && !iti.isValidNumber()) {
+            setError('phone', 'Please enter a valid phone number.');
+            ok = false;
+          }
+          if (!values.message || values.message.trim().length < 10) {
+            setError('message', 'Please enter at least 10 characters.');
+            ok = false;
+          }
+          return ok;
+        }
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var data = new FormData(form);
+          var values = Object.fromEntries(data.entries());
+          if (!validate(values)) return;
+          btn.disabled = true;
+          btn.textContent = 'Sending...';
+          setTimeout(function () {
+            btn.disabled = false;
+            btn.textContent = 'Send Message';
+            form.reset();
+            iti.setNumber('');
+            if (fileText) fileText.textContent = 'Choose a file or drag & drop';
+            toast.hidden = false;
+            toast.textContent = 'Message sent successfully!';
+            setTimeout(function () { toast.hidden = true; }, 3000);
+          }, 1200);
+        });
+      })();
+    </script>
   </body>
 </html>

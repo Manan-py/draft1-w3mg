@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="icon" type="image/webp" href="assets/w3mg-logo.webp" />
-    <link rel="shortcut icon" type="image/webp" href="assets/w3mg-logo.webp" />
+    <link rel="icon" type="image/png" href="assets/Favicon%20W3MG.png" />
+    <link rel="shortcut icon" type="image/png" href="assets/Favicon%20W3MG.png" />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles.css" />
     <title>About — W3MG</title>
@@ -19,6 +19,8 @@
         <span class="topbar-text"><strong>Human Creativity.</strong></span>
         <span class="topbar-dot"></span>
         <span class="topbar-text"><strong>AI Precision.</strong></span>
+        <span class="topbar-dot"></span>
+        <span class="topbar-text"><strong>15+ years experience.</strong></span>
       </div>
     </div>
 
@@ -167,14 +169,45 @@
         </div>
       </section>
 
-      <!-- Stats -->
-      <section style="background: var(--primary); color:white; padding:3rem 0;">
-        <div class="container">
-          <div class="stats-grid">
-            <div class="stat"><div class="stat-value">150+</div><div class="stat-label">Projects Completed</div></div>
-            <div class="stat"><div class="stat-value">25+</div><div class="stat-label">Team Members</div></div>
-            <div class="stat"><div class="stat-value">98%</div><div class="stat-label">Client Satisfaction</div></div>
-            <div class="stat"><div class="stat-value">10+</div><div class="stat-label">Years in Business</div></div>
+      <!-- Stats (aligned with homepage metrics) -->
+      <section class="metrics metrics-lunar">
+        <div class="metrics-lunar-stars" aria-hidden="true"></div>
+        <div class="container metrics-lunar-grid">
+          <div class="metrics-lunar-item">
+            <div class="metrics-lunar-icon">
+              <img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/icons/calendar3.svg" alt="" width="24" height="24" />
+            </div>
+            <div class="metrics-lunar-content">
+              <span class="metrics-lunar-value">15+</span>
+              <span class="metrics-lunar-label">Years in business</span>
+            </div>
+          </div>
+          <div class="metrics-lunar-item">
+            <div class="metrics-lunar-icon">
+              <img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/icons/rocket-takeoff.svg" alt="" width="24" height="24" />
+            </div>
+            <div class="metrics-lunar-content">
+              <span class="metrics-lunar-value">500+</span>
+              <span class="metrics-lunar-label">Websites &amp; Projects Launched</span>
+            </div>
+          </div>
+          <div class="metrics-lunar-item">
+            <div class="metrics-lunar-icon">
+              <img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/icons/trophy.svg" alt="" width="24" height="24" />
+            </div>
+            <div class="metrics-lunar-content">
+              <span class="metrics-lunar-value">30+</span>
+              <span class="metrics-lunar-label">Awards &amp; Recognition</span>
+            </div>
+          </div>
+          <div class="metrics-lunar-item">
+            <div class="metrics-lunar-icon">
+              <img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/icons/code-slash.svg" alt="" width="24" height="24" />
+            </div>
+            <div class="metrics-lunar-content">
+              <span class="metrics-lunar-value">Full Tech Stack</span>
+              <span class="metrics-lunar-label">Languages, frameworks &amp; cloud</span>
+            </div>
           </div>
         </div>
       </section>
@@ -192,48 +225,59 @@
             <!-- Director -->
             <div class="team-group team-group--director">
               <h3 class="team-group-title">Director</h3>
-              <div class="team-grid">
-                <div class="team-card reveal">
-                  <div class="team-photo" style="--img:url('https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=2000&auto=format&fit=crop')"></div>
-                  <h3>Mayuresh Goyal</h3>
-                  <p class="team-role">Director</p>
+              <article class="team-director-card reveal">
+                <div class="team-director-photo">
+                  <div class="team-photo team-photo--director" style="--img:url('assets/mayu.jpeg')"></div>
                 </div>
-                <div class="team-card reveal">
-                  <div class="team-photo" style="--img:url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=2000&auto=format&fit=crop')"></div>
-                  <h3>Stuti Singh</h3>
+                <div class="team-director-body">
+                  <h3>Mayuresh G</h3>
                   <p class="team-role">Director</p>
+                  <div class="team-bio">
+                    <p>
+                      Mayuresh Goyal is an accomplished Tech Lead, Director, and Full-Stack Senior Engineer with over 15 years of experience building and scaling complex digital platforms across healthcare, pharmaceutical technology, eCommerce, and enterprise CRM systems. He brings a strong track record of delivering secure, highly scalable, and compliance-ready solutions, combining deep hands-on engineering expertise with strategic technical leadership in both regulated and high-growth environments.
+                    </p>
+                    <p>
+                      Mayuresh has architected and led the development of high-traffic, highly scalable WooCommerce platforms and custom digital commerce ecosystems built on WordPress, Laravel-based backend services, and MERN-driven frontend architectures. His work emphasizes performance optimization, horizontal scalability, fault tolerance, and system decoupling, enabling platforms to support large product catalogs, high concurrency, and multi-region deployments. Leveraging AWS for cloud infrastructure and Vercel for modern frontend delivery, he has designed deployment pipelines and runtime environments optimized for speed, reliability, and continuous delivery at scale.
+                    </p>
+                    <p>
+                      In the healthcare and medical technology domains, Mayuresh has served as a compliance-focused engineering leader, overseeing the technical implementation of HIPAA and PIPEDA compliance through Vanta-based automation and monitoring. He has embedded security-by-design and privacy-by-default principles into application architecture and engineering workflows, overseeing data protection controls, identity and access management, audit logging, incident response processes, and continuous compliance validation. His cross-functional leadership with legal, security, and operations teams has enabled sustained audit readiness while maintaining rapid development velocity.
+                    </p>
+                    <p>
+                      With a proven ability to execute across the full product lifecycle, Mayuresh excels in end-to-end platform ownership, from early-stage architecture and system design through development, deployment, compliance certification, and long-term optimization. His leadership has directly contributed to multiple startups achieving multi-million-dollar revenue growth, particularly in the healthcare and e-commerce sectors. Driven by a passion for solving real-world problems through technology, Mayuresh consistently aligns technical strategy, regulatory requirements, and business objectives, making him a valuable asset to organizations operating at scale and under regulatory scrutiny.
+                    </p>
+                  </div>
                 </div>
-              </div>
+              </article>
             </div>
 
-            <!-- Dev Team -->
+            <!-- Core Developers -->
             <div class="team-group team-group--dev">
               <h3 class="team-group-title">Core Developers</h3>
               <div class="team-grid">
-                <div class="team-card reveal">
-                  <div class="team-photo" style="--img:url('https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=2000&auto=format&fit=crop')"></div>
+                <div class="team-card team-card--compact reveal">
+                  <div class="team-photo" style="--img:url('assets/Abhishek.png')"></div>
                   <h3>Abhishek Singh</h3>
                   <p class="team-role">QA Engineer</p>
                 </div>
-                <div class="team-card reveal">
-                  <div class="team-photo" style="--img:url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2000&auto=format&fit=crop')"></div>
+                <div class="team-card team-card--compact reveal">
+                  <div class="team-photo" style="--img:url('assets/deepak.jpg')"></div>
                   <h3>Deepak Kumar</h3>
                   <p class="team-role">WP / React Dev</p>
                 </div>
-                <div class="team-card reveal">
-                  <div class="team-photo" style="--img:url('https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?q=80&w=2000&auto=format&fit=crop')"></div>
+                <div class="team-card team-card--compact reveal">
+                  <div class="team-photo" style="--img:url('assets/Omkar Headshot.png')"></div>
                   <h3>Omkar Gadkar</h3>
                   <p class="team-role">MERN Stack</p>
                 </div>
-                <div class="team-card reveal">
-                  <div class="team-photo" style="--img:url('https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=2000&auto=format&fit=crop')"></div>
+                <div class="team-card team-card--compact reveal">
+                  <div class="team-photo" style="--img:url('assets/Aniket.jpg')"></div>
                   <h3>Aniket Joshi</h3>
-                  <p class="team-role">Developer</p>
+                  <p class="team-role">Devops</p>
                 </div>
               </div>
             </div>
 
-            <!-- BDE -->
+            <!-- BDE (hidden for now — restore when ready)
             <div class="team-group team-group--bde">
               <h3 class="team-group-title">BDE</h3>
               <div class="team-grid">
@@ -249,6 +293,7 @@
                 </div>
               </div>
             </div>
+            -->
           </div>
         </div>
       </section>
@@ -258,13 +303,12 @@
       <div class="container footer-grid">
         <div class="footer-brand">
           <a href="index.html" class="logo logo-light"><img src="assets/w3mg-logo.webp" alt="W3MG" class="logo-img"></a>
+          <p class="footer-legal-name">W3MG Software and Internet Services Pvt Ltd</p>
           <p class="footer-text">
             We build scalable digital solutions that drive real results. From concept to code, we're your partner in innovation.
           </p>
-          <div class="socials">
-            <a href="#" aria-label="Twitter">𝕏</a>
-            <a href="#" aria-label="LinkedIn">in</a>
-            <a href="#" aria-label="GitHub">GH</a>
+          <div class="socials socials--linkedin" aria-label="Social">
+            <a href="https://in.linkedin.com/company/w3mg-designs" target="_blank" rel="noopener noreferrer" aria-label="W3MG on LinkedIn">in</a>
           </div>
         </div>
         <div class="footer-col">
@@ -272,35 +316,69 @@
           <ul class="footer-list">
             <li><a href="index.html">Home</a></li>
             <li><a href="services.html">Services</a></li>
+            <li><a href="blogs.html">Blog</a></li>
             <li><a href="portfolio.html">Portfolio</a></li>
             <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4 class="footer-title">Technologies</h4>
+          <h4 class="footer-title">Design</h4>
+          <ul class="footer-list">
+            <li><a href="ui-ux-design.html">UI/UX Design</a></li>
+            <li><a href="web-design.html">Web Design</a></li>
+            <li><a href="landing-page-design.html">Landing Page Design</a></li>
+            <li><a href="brand-identity.html">Brand Identity</a></li>
+            <li><a href="mobile-app-design.html">Mobile App Design</a></li>
+            <li><a href="product-design.html">Product Design</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-title">Development</h4>
           <ul class="footer-list">
             <li><a href="wordpress-development.html">WordPress</a></li>
             <li><a href="laravel-development.html">Laravel</a></li>
             <li><a href="mern-stack.html">MERN Stack</a></li>
             <li><a href="fullstack-development.html">Full-Stack</a></li>
+            <li><a href="security-devops.html">Security &amp; DevOps</a></li>
+            <li><a href="headless-ecommerce.html">Headless E-commerce</a></li>
+            <li><a href="ai-models-training.html">AI Models Training</a></li>
             <li><a href="ai-chatbots.html">AI Chatbots</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-title">Hire Us</h4>
+          <ul class="footer-list">
+            <li><a href="hire-developer.html">Hire a Developer</a></li>
+            <li><a href="hire-wordpress-developer.html">Hire WordPress Developer</a></li>
+            <li><a href="hire-laravel-developer.html">Hire Laravel Developer</a></li>
+            <li><a href="hire-mern-developer.html">Hire MERN Developer</a></li>
+            <li><a href="hire-fullstack-developer.html">Hire Full-Stack Developer</a></li>
+            <li><a href="hire-uiux-designer.html">Hire UI/UX Designer</a></li>
+            <li><a href="hire-ai-ml-engineer.html">Hire AI/ML Engineer</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4 class="footer-title">Contact Us</h4>
           <ul class="footer-list">
-            <li>123 Innovation Drive, Tech City, TC 10010</li>
-            <li>+1 (555) 123-4567</li>
-            <li>contact@w3mg.com</li>
+            <li>Aadhya Tech Space, 1st Floor, SS Sapphire Building,<br />Near Archana CinePlex, Orai, U.P. (285001), India</li>
+            <li><a href="tel:+917499999975">+91 74999 99975</a></li>
+            <li><a href="mailto:contact@w3mg.in">contact@w3mg.in</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <div class="container footer-bottom-inner">
-          <p>© <span id="year"></span> W3MG Agency. All rights reserved.</p>
-          <div class="footer-links">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
+        <div class="container footer-bottom-stack">
+          <div class="footer-bottom-inner">
+            <p class="footer-copyright">© <span id="year"></span> W3MG Software and Internet Services Pvt Ltd. All rights reserved.</p>
+            <div class="footer-links">
+              <a href="privacy-policy.html">Privacy Policy</a>
+              <a href="terms-of-service.html">Terms of Service</a>
+            </div>
+          </div>
+          <div class="footer-disclaimer" role="note">
+            <p>W3MG™ is a trademark of W3MG Software and Internet Services Pvt. Ltd. Unauthorized use, reproduction, or distribution of this mark is strictly prohibited.</p>
+            <p>All other company names, logos, and trademarks displayed on this website are the property of their respective owners and are used for identification purposes only. Their use does not imply endorsement or affiliation.</p>
           </div>
         </div>
       </div>
